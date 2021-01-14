@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Widerstandscode</string>
+    <string name="btn_SubmitName">Submit</string>
 </resources>
