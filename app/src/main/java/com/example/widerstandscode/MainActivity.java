@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         //Variablen
         String[] colors = new String[5];
         String values = "";
+        String multiplikator = "1";
         colors[0] = pt_Input1.getText().toString();
         colors[1] = pt_Input2.getText().toString();
         colors[2] = pt_Input3.getText().toString();
@@ -44,14 +45,20 @@ public class MainActivity extends AppCompatActivity {
         {
             for(int x = 0; x < this.colortable.length; x++)
             {
-                if(colors[i].equals(colortable[x]) && x < 10)
-                {
-                    values += Integer.toString(x);
-                    x = this.colortable.length;
+                if(colors[i].equals(colortable[x]) && x < 10) {
+                    if(i<=2){
+                        values += Integer.toString(x);
+                        x = this.colortable.length;
+                    }
+                    if(i == 3){
+                        for(int y = 0; y <x ; y++)
+                            multiplikator += "0";
+                    }
                 }
             }
         }
         Log.d("Values Werte: ", values);
+        Log.d("Multiplikator: ", multiplikator);
     }
     void WertZuweisung()
     {
