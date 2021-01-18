@@ -2,49 +2,68 @@ package com.example.widerstandscode;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.os.Bundle;
-import android.os.Debug;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-
 public class MainActivity extends AppCompatActivity {
-    TextView pt_Input1;
-    TextView pt_Input2;
-    TextView pt_Input3;
-    TextView pt_Input4;
-    TextView pt_Input5;
-    ImageView iv_Ring;
+    ImageView in_Ring1;
+    ImageView in_Ring2;
+    ImageView in_Ring3;
+    ImageView in_Ring4;
+    ImageView in_Ring5;
     String[] colortable = new String[12];
+    String s_Ring1Col = "";
+    String s_Ring2Col = "";
+    String s_Ring3Col = "";
+    String s_Ring4Col = "";
+    String s_Ring5Col = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         WertZuweisung();
-        /*pt_Input1 = findViewById(R.id.pt_Input);
-        pt_Input2 = findViewById(R.id.pt_Input2);
-        pt_Input3 = findViewById(R.id.pt_Input3);
-        pt_Input4 = findViewById(R.id.pt_Input4);
-        pt_Input5 = findViewById(R.id.pt_Input5);*/
+        in_Ring1 = findViewById(R.id.iv_Ring1);
+        in_Ring2 = findViewById(R.id.iv_Ring2);
+        in_Ring3 = findViewById(R.id.iv_Ring3);
+        in_Ring4 = findViewById(R.id.iv_Ring4);
+        in_Ring5 = findViewById(R.id.iv_Ring5);
     }
-    public void SelectColor(View view){
+    public void ChangeColor(View view){
+        switch (view.getId()){
+            case(R.id.iv_Ring1):
+                in_Ring1.setImageResource(R.drawable.red);
+                s_Ring1Col = "red";
+                break;
+            case(R.id.iv_Ring2):
+                in_Ring2.setImageResource(R.drawable.yellow);
+                s_Ring2Col = "yellow";
+                break;
+            case(R.id.iv_Ring3):
+                in_Ring3.setImageResource(R.drawable.green);
+                s_Ring3Col = "green";
+                break;
+            case(R.id.iv_Ring4):
+                in_Ring4.setImageResource(R.drawable.blue);
+                s_Ring4Col = "blue";
+                break;
+        }
     }
     public void SubmitRun(View view){
         //Variablen
         String[] colors = new String[5];
         String values = "";
         String multiplikator = "1";
-        colors[0] = pt_Input1.getText().toString();
-        colors[1] = pt_Input2.getText().toString();
-        colors[2] = pt_Input3.getText().toString();
-        colors[3] = pt_Input4.getText().toString();
-        colors[4] = pt_Input5.getText().toString();
+        colors[0] = s_Ring1Col;
+        colors[1] = s_Ring2Col;
+        colors[2] = s_Ring3Col;
+        colors[3] = s_Ring4Col;
+        colors[4] = s_Ring5Col;
         //Algorithmus
         for(int i = 0; i < colors.length; i++)
         {

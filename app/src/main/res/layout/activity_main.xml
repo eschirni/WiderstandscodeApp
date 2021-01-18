@@ -7,74 +7,6 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/view_Ring5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/distance_between_buttons"
-        android:layout_marginLeft="@dimen/distance_between_buttons"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.947"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.203"
-        app:srcCompat="@drawable/gruppe_4" />
-
-    <ImageView
-        android:id="@+id/view_Ring4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/distance_between_buttons"
-        android:layout_marginLeft="@dimen/distance_between_buttons"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.697"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.203"
-        app:srcCompat="@drawable/gruppe_4" />
-
-    <ImageView
-        android:id="@+id/view_Ring3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/distance_between_buttons"
-        android:layout_marginLeft="@dimen/distance_between_buttons"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.433"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.203"
-        app:srcCompat="@drawable/gruppe_4" />
-
-    <ImageView
-        android:id="@+id/view_Ring2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/distance_between_buttons"
-        android:layout_marginLeft="@dimen/distance_between_buttons"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.185"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.203"
-        app:srcCompat="@drawable/gruppe_4" />
-
-    <ImageView
-        android:id="@+id/view_Ring1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.203"
-        app:srcCompat="@drawable/gruppe_4" />
-
-    <ImageView
         android:id="@+id/view_Resistor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -85,5 +17,68 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.051"
         app:srcCompat="@drawable/gruppe_3" />
+
+    <LinearLayout
+        android:layout_width="379dp"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.222">
+
+        <ImageView
+            android:id="@+id/iv_Ring1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/red"
+            android:onClick="ChangeColor"
+            app:srcCompat="@drawable/gruppe_4" />
+
+        <ImageView
+            android:id="@+id/iv_Ring2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="ChangeColor"
+            app:srcCompat="@drawable/gruppe_4" />
+
+        <ImageView
+            android:id="@+id/iv_Ring3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="ChangeColor"
+            app:srcCompat="@drawable/gruppe_4" />
+
+        <ImageView
+            android:id="@+id/iv_Ring4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="ChangeColor"
+            app:srcCompat="@drawable/gruppe_4" />
+
+        <ImageView
+            android:id="@+id/iv_Ring5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="ChangeColor"
+            app:srcCompat="@drawable/gruppe_4" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="SubmitRun"
+        android:text="@string/btn_SubmitName"
+        app:backgroundTint="@color/marineBlue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
