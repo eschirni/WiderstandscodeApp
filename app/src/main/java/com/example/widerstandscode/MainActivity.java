@@ -2,10 +2,12 @@ package com.example.widerstandscode;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.media.Image;
 import android.os.Bundle;
 import android.os.Debug;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.Arrays;
@@ -18,17 +20,20 @@ public class MainActivity extends AppCompatActivity {
     TextView pt_Input3;
     TextView pt_Input4;
     TextView pt_Input5;
+    ImageView iv_Ring;
     String[] colortable = new String[12];
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         WertZuweisung();
-        pt_Input1 = findViewById(R.id.pt_Input);
+        /*pt_Input1 = findViewById(R.id.pt_Input);
         pt_Input2 = findViewById(R.id.pt_Input2);
         pt_Input3 = findViewById(R.id.pt_Input3);
         pt_Input4 = findViewById(R.id.pt_Input4);
-        pt_Input5 = findViewById(R.id.pt_Input5);
+        pt_Input5 = findViewById(R.id.pt_Input5);*/
+    }
+    public void SelectColor(View view){
     }
     public void SubmitRun(View view){
         //Variablen
