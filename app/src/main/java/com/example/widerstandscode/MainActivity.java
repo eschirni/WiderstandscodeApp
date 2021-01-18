@@ -3,14 +3,11 @@ package com.example.widerstandscode;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.os.Debug;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
     TextView pt_Input1;
@@ -18,20 +15,36 @@ public class MainActivity extends AppCompatActivity {
     TextView pt_Input3;
     TextView pt_Input4;
     TextView pt_Input5;
-    String[] colortable = new String[12];
+    String[] colortable = {"black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white", "gold", "silver"};
+    HashMap<String, Double> generalToleranz = new HashMap<String, Double>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        WertZuweisung();
         pt_Input1 = findViewById(R.id.pt_Input);
         pt_Input2 = findViewById(R.id.pt_Input2);
         pt_Input3 = findViewById(R.id.pt_Input3);
         pt_Input4 = findViewById(R.id.pt_Input4);
         pt_Input5 = findViewById(R.id.pt_Input5);
+        for (int i = 0; i < colortable.length; i++)
+        {
+            generalToleranz.put(colortable[i], 0.0);
+        }
+        generalToleranz.put("brown", 1.0);
+        generalToleranz.put("red", 2.0);
+        generalToleranz.put("green", 0.5);
+        generalToleranz.put("blue", 0.25);
+        generalToleranz.put("violet", 0.1);
+        generalToleranz.put("gold", 5.0);
+        generalToleranz.put("silver", 10.0);
     }
-    public void SubmitRun(View view){
-        //Variablen
+    public void SubmitRun(View view)
+    {
+        String[] colors = Values();
+        double toleranz = Toleranz(colors);
+    }
+    private String[] Values()
+    {
         String[] colors = new String[5];
         String values = "";
         String multiplikator = "1";
@@ -40,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
         colors[2] = pt_Input3.getText().toString();
         colors[3] = pt_Input4.getText().toString();
         colors[4] = pt_Input5.getText().toString();
-        //Algorithmus
         for(int i = 0; i < colors.length; i++)
         {
             for(int x = 0; x < this.colortable.length; x++)
@@ -59,20 +71,9 @@ public class MainActivity extends AppCompatActivity {
         }
         Log.d("Values Werte: ", values);
         Log.d("Multiplikator: ", multiplikator);
+        return colors;
     }
-    void WertZuweisung()
-    {
-        colortable[0] = "black";
-        colortable[1] = "brown";
-        colortable[2] = "red";
-        colortable[3] = "orange";
-        colortable[4] = "yellow";
-        colortable[5] = "green";
-        colortable[6] = "blue";
-        colortable[7] = "violet";
-        colortable[8] = "grey";
-        colortable[9] = "white";
-        colortable[10] = "gold";
-        colortable[11] = "silver";
+    private double Toleranz(String[] colors){
+        return generalToleranz.get(colors[4]);
     }
 }
