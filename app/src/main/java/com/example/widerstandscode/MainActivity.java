@@ -37,20 +37,20 @@ public class MainActivity extends AppCompatActivity {
     public void ChangeColor(View view){
         switch (view.getId()){
             case(R.id.iv_Ring1):
-                in_Ring1.setImageResource(R.drawable.red);
-                s_Ring1Col = "red";
+                s_Ring1Col = in_Ring1.getBackground().toString();
+                in_Ring1.setImageResource(getResources().getIdentifier(s_Ring1Col, "drawable", getPackageName()));
                 break;
             case(R.id.iv_Ring2):
-                in_Ring2.setImageResource(R.drawable.yellow);
-                s_Ring2Col = "yellow";
+                s_Ring2Col = in_Ring2.getBackground().toString();
+                in_Ring2.setImageResource(getResources().getIdentifier(s_Ring1Col, "drawable", getPackageName()));
                 break;
             case(R.id.iv_Ring3):
-                in_Ring3.setImageResource(R.drawable.green);
-                s_Ring3Col = "green";
+                s_Ring3Col = in_Ring3.getBackground().toString();
+                in_Ring3.setImageResource(getResources().getIdentifier(s_Ring3Col, "drawable", getPackageName()));
                 break;
             case(R.id.iv_Ring4):
-                in_Ring4.setImageResource(R.drawable.blue);
-                s_Ring4Col = "blue";
+                s_Ring4Col = in_Ring4.getBackground().toString();
+                in_Ring4.setImageResource(getResources().getIdentifier(s_Ring4Col, "drawable", getPackageName()));
                 break;
         }
     }
