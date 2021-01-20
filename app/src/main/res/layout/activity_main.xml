@@ -33,7 +33,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/red"
-            android:onClick="ChangeColor"
             app:srcCompat="@drawable/gruppe_4" />
 
         <ImageView
@@ -42,7 +41,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/white"
-            android:onClick="ChangeColor"
             app:srcCompat="@drawable/gruppe_4" />
 
         <ImageView
@@ -51,7 +49,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/white"
-            android:onClick="ChangeColor"
             app:srcCompat="@drawable/gruppe_4" />
 
         <ImageView
@@ -60,7 +57,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/white"
-            android:onClick="ChangeColor"
             app:srcCompat="@drawable/gruppe_4" />
 
         <ImageView
@@ -69,7 +65,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/white"
-            android:onClick="ChangeColor"
             app:srcCompat="@drawable/gruppe_4" />
     </LinearLayout>
 
@@ -84,5 +79,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/red0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:tag="red0"
+        android:onClick="SelectColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.021"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.325"
+        app:srcCompat="@drawable/red" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
