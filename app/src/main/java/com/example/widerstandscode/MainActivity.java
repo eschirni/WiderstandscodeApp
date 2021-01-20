@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
     private String[] colortable = {"black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white", "gold", "silver"};
     private String[] colors = new String[5];
     private HashMap<String, Double> generalToleranz = new HashMap<String, Double>();
-    private HashMap<String, String> buttonColors = new HashMap<String, String>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
         in_Ring3 = findViewById(R.id.iv_Ring3);
         in_Ring4 = findViewById(R.id.iv_Ring4);
         in_Ring5 = findViewById(R.id.iv_Ring5);
-        DefineColors();
         ToleranzTable();
     }
     public void SelectColor(View view){
@@ -49,26 +47,16 @@ public class MainActivity extends AppCompatActivity {
                 in_Ring1.setImageResource(getResources().getIdentifier(colors[index] , "drawable", getPackageName()));
                 break;
             case(1):
-                /*this.colors[1] = in_Ring2.getBackground().toString();
-                in_Ring2.setImageResource(getResources().getIdentifier(this.colors[1] , "drawable", getPackageName()));*/
-                in_Ring2.setImageResource(R.drawable.orange);
-                this.colors[1]="orange";
+                in_Ring2.setImageResource(getResources().getIdentifier(colors[index] , "drawable", getPackageName()));
                 break;
             case(2):
-                /*this.colors[2] = in_Ring3.getBackground().toString();
-                in_Ring3.setImageResource(getResources().getIdentifier(this.colors[2] , "drawable", getPackageName()));*/
-                in_Ring3.setImageResource(R.drawable.green);
-                this.colors[2]="green";
+                in_Ring3.setImageResource(getResources().getIdentifier(colors[index] , "drawable", getPackageName()));
                 break;
             case(3):
-                /*this.colors[3] = in_Ring4.getBackground().toString();
-                in_Ring4.setImageResource(getResources().getIdentifier(this.colors[3] , "drawable", getPackageName()));*/
-                in_Ring4.setImageResource(R.drawable.blue);
-                this.colors[3]="blue";
+                in_Ring4.setImageResource(getResources().getIdentifier(colors[index] , "drawable", getPackageName()));
                 break;
             case(4):
-                in_Ring5.setImageResource(R.drawable.violet);
-                this.colors[4]="violet";
+                in_Ring5.setImageResource(getResources().getIdentifier(colors[index] , "drawable", getPackageName()));
                 break;
         }
     }
@@ -115,8 +103,5 @@ public class MainActivity extends AppCompatActivity {
         generalToleranz.put("violet", 0.1);
         generalToleranz.put("gold", 5.0);
         generalToleranz.put("silver", 10.0);
-    }
-    private void DefineColors(){
-        buttonColors.put("android.graphics.drawable.BitmapDrawable@1706891", "red");
     }
 }

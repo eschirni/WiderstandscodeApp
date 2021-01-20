@@ -80,7 +80,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.953" />
+        app:layout_constraintVertical_bias="0.978" />
 
     <LinearLayout
         android:layout_width="45dp"
@@ -179,6 +179,406 @@
             android:onClick="SelectColor"
             android:layout_width="@dimen/color_buttons_size"
             android:layout_height="@dimen/color_buttons_size"
+            app:srcCompat="@drawable/silver" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="45dp"
+        android:layout_height="440dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.258"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.776">
+
+        <ImageView
+            android:id="@+id/black1"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="black1"
+            app:srcCompat="@drawable/black" />
+
+        <ImageView
+            android:id="@+id/brown1"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="brown1"
+            app:srcCompat="@drawable/brown" />
+
+        <ImageView
+            android:id="@+id/red1"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="red1"
+            app:srcCompat="@drawable/red" />
+
+        <ImageView
+            android:id="@+id/orange1"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="orange1"
+            app:srcCompat="@drawable/orange" />
+
+        <ImageView
+            android:id="@+id/yellow1"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="yellow1"
+            app:srcCompat="@drawable/yellow" />
+
+        <ImageView
+            android:id="@+id/green1"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="green1"
+            app:srcCompat="@drawable/green" />
+
+        <ImageView
+            android:id="@+id/blue1"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="blue1"
+            app:srcCompat="@drawable/blue" />
+
+        <ImageView
+            android:id="@+id/violet1"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="violet1"
+            app:srcCompat="@drawable/violet" />
+
+        <ImageView
+            android:id="@+id/grey1"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="grey1"
+            app:srcCompat="@drawable/grey" />
+
+        <ImageView
+            android:id="@+id/gold1"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="gold1"
+            app:srcCompat="@drawable/gold" />
+
+        <ImageView
+            android:id="@+id/silver1"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="silver1"
+            app:srcCompat="@drawable/silver" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="45dp"
+        android:layout_height="440dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.474"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.776">
+
+        <ImageView
+            android:id="@+id/black2"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="black2"
+            app:srcCompat="@drawable/black" />
+
+        <ImageView
+            android:id="@+id/brown2"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="brown2"
+            app:srcCompat="@drawable/brown" />
+
+        <ImageView
+            android:id="@+id/red2"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="red2"
+            app:srcCompat="@drawable/red" />
+
+        <ImageView
+            android:id="@+id/orange2"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="orange2"
+            app:srcCompat="@drawable/orange" />
+
+        <ImageView
+            android:id="@+id/yellow2"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="yellow2"
+            app:srcCompat="@drawable/yellow" />
+
+        <ImageView
+            android:id="@+id/green2"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="green2"
+            app:srcCompat="@drawable/green" />
+
+        <ImageView
+            android:id="@+id/blue2"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="blue2"
+            app:srcCompat="@drawable/blue" />
+
+        <ImageView
+            android:id="@+id/violet2"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="violet2"
+            app:srcCompat="@drawable/violet" />
+
+        <ImageView
+            android:id="@+id/grey2"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="grey2"
+            app:srcCompat="@drawable/grey" />
+
+        <ImageView
+            android:id="@+id/gold2"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="gold2"
+            app:srcCompat="@drawable/gold" />
+
+        <ImageView
+            android:id="@+id/silver2"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="silver2"
+            app:srcCompat="@drawable/silver" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="45dp"
+        android:layout_height="440dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.692"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.776">
+
+        <ImageView
+            android:id="@+id/black3"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="black3"
+            app:srcCompat="@drawable/black" />
+
+        <ImageView
+            android:id="@+id/brown3"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="brown3"
+            app:srcCompat="@drawable/brown" />
+
+        <ImageView
+            android:id="@+id/red3"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="red3"
+            app:srcCompat="@drawable/red" />
+
+        <ImageView
+            android:id="@+id/orange3"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="orange3"
+            app:srcCompat="@drawable/orange" />
+
+        <ImageView
+            android:id="@+id/yellow3"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="yellow3"
+            app:srcCompat="@drawable/yellow" />
+
+        <ImageView
+            android:id="@+id/green3"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="green3"
+            app:srcCompat="@drawable/green" />
+
+        <ImageView
+            android:id="@+id/blue3"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="blue3"
+            app:srcCompat="@drawable/blue" />
+
+        <ImageView
+            android:id="@+id/violet3"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="violet3"
+            app:srcCompat="@drawable/violet" />
+
+        <ImageView
+            android:id="@+id/grey3"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="grey3"
+            app:srcCompat="@drawable/grey" />
+
+        <ImageView
+            android:id="@+id/gold3"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="gold3"
+            app:srcCompat="@drawable/gold" />
+
+        <ImageView
+            android:id="@+id/silver3"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="silver3"
+            app:srcCompat="@drawable/silver" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="45dp"
+        android:layout_height="440dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.928"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.776">
+
+        <ImageView
+            android:id="@+id/black4"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="black4"
+            app:srcCompat="@drawable/black" />
+
+        <ImageView
+            android:id="@+id/brown4"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="brown4"
+            app:srcCompat="@drawable/brown" />
+
+        <ImageView
+            android:id="@+id/red4"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="red4"
+            app:srcCompat="@drawable/red" />
+
+        <ImageView
+            android:id="@+id/orange4"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="orange4"
+            app:srcCompat="@drawable/orange" />
+
+        <ImageView
+            android:id="@+id/yellow4"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="yellow4"
+            app:srcCompat="@drawable/yellow" />
+
+        <ImageView
+            android:id="@+id/green4"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="green4"
+            app:srcCompat="@drawable/green" />
+
+        <ImageView
+            android:id="@+id/blue4"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="blue4"
+            app:srcCompat="@drawable/blue" />
+
+        <ImageView
+            android:id="@+id/violet4"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="violet4"
+            app:srcCompat="@drawable/violet" />
+
+        <ImageView
+            android:id="@+id/grey4"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="grey4"
+            app:srcCompat="@drawable/grey" />
+
+        <ImageView
+            android:id="@+id/gold4"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="gold4"
+            app:srcCompat="@drawable/gold" />
+
+        <ImageView
+            android:id="@+id/silver4"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="silver4"
             app:srcCompat="@drawable/silver" />
     </LinearLayout>
 
