@@ -40,10 +40,10 @@ public class MainActivity extends AppCompatActivity {
         int index = Integer.parseInt(Character.toString(id.charAt(id.length() - 1)));
         id = id.substring(0, id.length() - 1);
         colors[index]=id;
-        Log.d("Color Index", id);
+        Log.d("Color Index", colors[index]);
         ChangeColor(index);
     }
-    public void ChangeColor(int index){
+    private void ChangeColor(int index){
         switch (index){
             case(0):
                 in_Ring1.setImageResource(getResources().getIdentifier(colors[index] , "drawable", getPackageName()));
