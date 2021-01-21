@@ -23,9 +23,8 @@ public class MainActivity extends AppCompatActivity {
     ImageView in_Ring5;
     private String[] colortable = {"black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white", "gold", "silver"};
     private String[] colors;
-    private List<String> colorlist = new ArrayList<String >();
+    private List<String> colorlist = new ArrayList<String>();
     private HashMap<String, Double> generalToleranz = new HashMap<String, Double>();
-    private int arr_length = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,9 +40,12 @@ public class MainActivity extends AppCompatActivity {
         String id = view.getTag().toString();
         int index = Integer.parseInt(Character.toString(id.charAt(id.length() - 1)));
         id = id.substring(0, id.length() - 1);
-       // colors[index]=id;
-        colorlist.add(id);
-        //Log.d("Color Index", );
+        if(index >= colorlist.size()) {
+            colorlist.add(index , id);
+        }
+        else{
+            colorlist.set(index, id);
+        }
         ChangeColor(index);
     }
     private void ChangeColor(int index){
