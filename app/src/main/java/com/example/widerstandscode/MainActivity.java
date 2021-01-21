@@ -11,7 +11,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     ImageView in_Ring1;
@@ -20,8 +22,10 @@ public class MainActivity extends AppCompatActivity {
     ImageView in_Ring4;
     ImageView in_Ring5;
     private String[] colortable = {"black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white", "gold", "silver"};
-    private String[] colors = new String[5];
+    private String[] colors;
+    private List<String> colorlist = new ArrayList<String >();
     private HashMap<String, Double> generalToleranz = new HashMap<String, Double>();
+    private int arr_length = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,35 +41,39 @@ public class MainActivity extends AppCompatActivity {
         String id = view.getTag().toString();
         int index = Integer.parseInt(Character.toString(id.charAt(id.length() - 1)));
         id = id.substring(0, id.length() - 1);
-        colors[index]=id;
-        Log.d("Color Index", colors[index]);
+       // colors[index]=id;
+        colorlist.add(id);
+        //Log.d("Color Index", );
         ChangeColor(index);
     }
     private void ChangeColor(int index){
         switch (index){
             case(0):
-                in_Ring1.setImageResource(getResources().getIdentifier(colors[index] , "drawable", getPackageName()));
+                in_Ring1.setImageResource(getResources().getIdentifier(colorlist.get(index) , "drawable", getPackageName()));
                 break;
             case(1):
-                in_Ring2.setImageResource(getResources().getIdentifier(colors[index] , "drawable", getPackageName()));
+                in_Ring2.setImageResource(getResources().getIdentifier(colorlist.get(index) , "drawable", getPackageName()));
                 break;
             case(2):
-                in_Ring3.setImageResource(getResources().getIdentifier(colors[index] , "drawable", getPackageName()));
+                in_Ring3.setImageResource(getResources().getIdentifier(colorlist.get(index) , "drawable", getPackageName()));
                 break;
             case(3):
-                in_Ring4.setImageResource(getResources().getIdentifier(colors[index] , "drawable", getPackageName()));
+                in_Ring4.setImageResource(getResources().getIdentifier(colorlist.get(index) , "drawable", getPackageName()));
                 break;
             case(4):
-                in_Ring5.setImageResource(getResources().getIdentifier(colors[index] , "drawable", getPackageName()));
+                in_Ring5.setImageResource(getResources().getIdentifier(colorlist.get(index) , "drawable", getPackageName()));
                 break;
         }
     }
     public void SubmitRun(View view){
-        colors = Values();//macht void mehr sinn?
-        double toleranz = Toleranz(colors);
-        Log.d("Toleranz: ", Double.toString(toleranz));
+        colors = colorlist.toArray(new String[colorlist.size()]);
+        Values();//macht void mehr sinn?
+        if(colors.length > 3) {
+            double toleranz = Toleranz(colors);
+            Log.d("Toleranz: ", Double.toString(toleranz));
+        }
     }
-    private String[] Values(){
+    private void Values(){
         String values = "";
         String multiplikator = "1";
         for(int i = 0; i < colors.length; i++)
@@ -86,7 +94,6 @@ public class MainActivity extends AppCompatActivity {
         }
         Log.d("Values Werte: ", values);
         Log.d("Multiplikator: ", multiplikator);
-        return colors;
     }
     private double Toleranz(String[] colors){
         return generalToleranz.get(colors[4]);
