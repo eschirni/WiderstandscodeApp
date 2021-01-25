@@ -21,6 +21,11 @@ public class MainActivity extends AppCompatActivity {
     ImageView in_Ring3;
     ImageView in_Ring4;
     ImageView in_Ring5;
+    TextView tv_color;
+    TextView tv_color2;
+    TextView tv_color3;
+    TextView tv_color4;
+    TextView tv_color5;
     private String[] colortable = {"black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white", "gold", "silver"};
     private String[] colors;
     private List<String> colorlist = new ArrayList<String>();
@@ -34,6 +39,11 @@ public class MainActivity extends AppCompatActivity {
         in_Ring3 = findViewById(R.id.iv_Ring3);
         in_Ring4 = findViewById(R.id.iv_Ring4);
         in_Ring5 = findViewById(R.id.iv_Ring5);
+        tv_color = findViewById(R.id.tv_color);
+        tv_color2 = findViewById(R.id.tv_color2);
+        tv_color3 = findViewById(R.id.tv_color3);
+        tv_color4 = findViewById(R.id.tv_color4);
+        tv_color5 = findViewById(R.id.tv_color5);
         ToleranzTable();
     }
     public void SelectColor(View view){
@@ -71,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         colors = colorlist.toArray(new String[colorlist.size()]);
         Values();//macht void mehr sinn?
         if(colors.length > 3) {
-            double toleranz = Toleranz(colors);
+            double toleranz = Toleranz(colors, 4);
             Log.d("Toleranz: ", Double.toString(toleranz));
         }
     }
@@ -97,8 +107,8 @@ public class MainActivity extends AppCompatActivity {
         Log.d("Values Werte: ", values);
         Log.d("Multiplikator: ", multiplikator);
     }
-    private double Toleranz(String[] colors){
-        return generalToleranz.get(colors[4]);
+    private double Toleranz(String[] colors, int pos){
+        return generalToleranz.get(colors[pos]);
     }
     private void ToleranzTable(){
         for (int i = 0; i < colortable.length; i++)
