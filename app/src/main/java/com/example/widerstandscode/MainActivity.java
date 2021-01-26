@@ -58,22 +58,50 @@ public class MainActivity extends AppCompatActivity {
         }
         ChangeColor(index);
     }
+    public void ColorSelection(View view) {
+        String id = view.getTag().toString();
+        int index = Integer.parseInt(id);
+        //die Layouts sind durchnummeriert von 1-5, der switch-case prüft im welchen Layout die Farbe ausgewählt wurde
+        //um die richtige Farbe zu wechseln
+        switch(index){
+            case 1:
+                findViewById(R.id.layoutRing1).setVisibility(View.VISIBLE);
+                break;
+            case 2:
+                findViewById(R.id.layoutRing2).setVisibility(View.VISIBLE);
+                break;
+            case 3:
+                findViewById(R.id.layoutRing3).setVisibility(View.VISIBLE);
+                break;
+            case 4:
+                findViewById(R.id.layoutRing4).setVisibility(View.VISIBLE);
+                break;
+            case 5:
+                findViewById(R.id.layoutRing5).setVisibility(View.VISIBLE);
+                break;
+        }
+    }
     private void ChangeColor(int index){
         switch (index){
             case(0):
                 in_Ring1.setImageResource(getResources().getIdentifier(colorlist.get(index) , "drawable", getPackageName()));
+                findViewById(R.id.layoutRing1).setVisibility(View.INVISIBLE); //Layout wird wieder unsichtbar
                 break;
             case(1):
                 in_Ring2.setImageResource(getResources().getIdentifier(colorlist.get(index) , "drawable", getPackageName()));
+                findViewById(R.id.layoutRing2).setVisibility(View.INVISIBLE);
                 break;
             case(2):
                 in_Ring3.setImageResource(getResources().getIdentifier(colorlist.get(index) , "drawable", getPackageName()));
+                findViewById(R.id.layoutRing3).setVisibility(View.INVISIBLE);
                 break;
             case(3):
                 in_Ring4.setImageResource(getResources().getIdentifier(colorlist.get(index) , "drawable", getPackageName()));
+                findViewById(R.id.layoutRing4).setVisibility(View.INVISIBLE);
                 break;
             case(4):
                 in_Ring5.setImageResource(getResources().getIdentifier(colorlist.get(index) , "drawable", getPackageName()));
+                findViewById(R.id.layoutRing5).setVisibility(View.INVISIBLE);
                 break;
         }
     }
@@ -123,4 +151,6 @@ public class MainActivity extends AppCompatActivity {
         generalToleranz.put("gold", 5.0);
         generalToleranz.put("silver", 10.0);
     }
+
+
 }
