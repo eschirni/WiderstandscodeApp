@@ -2,9 +2,11 @@ package com.example.widerstandscode;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -86,22 +88,27 @@ public class MainActivity extends AppCompatActivity {
             case(0):
                 in_Ring1.setImageResource(getResources().getIdentifier(colorlist.get(index) , "drawable", getPackageName()));
                 findViewById(R.id.layoutRing1).setVisibility(View.INVISIBLE); //Layout wird wieder unsichtbar
+                ColorResistor(index, tv_color); //Wählt die Farbe je nach der Liste aus
                 break;
             case(1):
                 in_Ring2.setImageResource(getResources().getIdentifier(colorlist.get(index) , "drawable", getPackageName()));
                 findViewById(R.id.layoutRing2).setVisibility(View.INVISIBLE);
+                ColorResistor(index, tv_color2);
                 break;
             case(2):
                 in_Ring3.setImageResource(getResources().getIdentifier(colorlist.get(index) , "drawable", getPackageName()));
                 findViewById(R.id.layoutRing3).setVisibility(View.INVISIBLE);
+                ColorResistor(index, tv_color3);
                 break;
             case(3):
                 in_Ring4.setImageResource(getResources().getIdentifier(colorlist.get(index) , "drawable", getPackageName()));
                 findViewById(R.id.layoutRing4).setVisibility(View.INVISIBLE);
+                ColorResistor(index, tv_color4);
                 break;
             case(4):
                 in_Ring5.setImageResource(getResources().getIdentifier(colorlist.get(index) , "drawable", getPackageName()));
                 findViewById(R.id.layoutRing5).setVisibility(View.INVISIBLE);
+                ColorResistor(index, tv_color5);
                 break;
         }
     }
@@ -150,6 +157,48 @@ public class MainActivity extends AppCompatActivity {
         generalToleranz.put("violet", 0.1);
         generalToleranz.put("gold", 5.0);
         generalToleranz.put("silver", 10.0);
+    }
+    private void ColorResistor(int index, TextView tv)
+    {
+        switch (colorlist.get(index))
+        {
+            case "black":
+                tv.setBackgroundColor(Color.rgb(0, 0, 0));
+                break;
+            case "brown":
+                tv.setBackgroundColor(Color.rgb(196, 106, 60));
+                break;
+            case "red":
+                tv.setBackgroundColor(Color.rgb(243, 65, 65));
+                break;
+            case "orange":
+                tv.setBackgroundColor(Color.rgb(255, 172, 7));
+                break;
+            case "yellow":
+                tv.setBackgroundColor(Color.rgb(241, 226, 18));
+                break;
+            case "green":
+                tv.setBackgroundColor(Color.rgb(45, 189, 40));
+                break;
+            case "blue":
+                tv.setBackgroundColor(Color.rgb(72, 194, 232));
+                break;
+            case "violet":
+                tv.setBackgroundColor(Color.rgb(203, 51, 209));
+                break;
+            case "grey":
+                tv.setBackgroundColor(Color.rgb(138, 135, 130));
+                break;
+            case "white":
+                tv.setBackgroundColor(Color.rgb(255, 255, 255));
+                break;
+            case "gold":
+                tv.setBackgroundColor(Color.rgb(222, 148, 1));
+                break;
+            case "silver":
+                tv.setBackgroundColor(Color.rgb(200, 199, 197));
+                break;
+        }
     }
 
 
