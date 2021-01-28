@@ -259,6 +259,8 @@ public class MainActivity extends AppCompatActivity {
         tv_color3.setBackgroundColor(Color.argb(0, 255, 255, 255));
         tv_color4.setBackgroundColor(Color.argb(0, 255, 255, 255));
         tv_color5.setBackgroundColor(Color.argb(0, 255, 255, 255));
+        for (int i = 0; i < 5; i++)
+            b_selected[i] = false;
     }
     private void SetLocale(){
         String language = Locale.getDefault().getDisplayLanguage();
