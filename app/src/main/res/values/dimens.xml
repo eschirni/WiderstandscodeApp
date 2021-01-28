@@ -2,4 +2,7 @@
 <resources>
     <dimen name="distance_between_buttons">20sp</dimen>
     <dimen name="color_buttons_size">40sp</dimen>
+    <dimen name="hint_txt_size">20sp</dimen>
+    <dimen name="txt_size">30sp</dimen>
+    <dimen name="btn_Corner">30sp</dimen>
 </resources>
