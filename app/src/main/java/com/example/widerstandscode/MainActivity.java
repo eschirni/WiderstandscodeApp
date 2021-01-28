@@ -104,8 +104,15 @@ public class MainActivity extends AppCompatActivity {
         String id = view.getTag().toString();
         int index = Integer.parseInt(Character.toString(id.charAt(id.length() - 1)));
         id = id.substring(0, id.length() - 1);
-        if(index >= colorlist.size()) {
-            colorlist.add(index , id);
+        int pos = (index - colorlist.size())+1;
+        if(pos > 1){
+            for(int i = colorlist.size()-1;i<pos-1;i++){
+                colorlist.add("null");
+            }
+            colorlist.add(index, id);
+        }
+        else if(pos == 1 || colorlist.size() == 0){
+            colorlist.add(index, id);
         }
         else{
             colorlist.set(index, id);
