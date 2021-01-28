@@ -2,4 +2,6 @@
     <string name="app_name">Resistor Code</string>
     <string name="btn_SubmitName">Submit</string>
     <string name="hintSetColor">Set the colors</string>
+    <string name="resistorDefault">Resistor Value</string>
+    <string name="toleranceDefault">Tolerance</string>
 </resources>

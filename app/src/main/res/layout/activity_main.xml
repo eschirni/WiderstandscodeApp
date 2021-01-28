@@ -80,17 +80,21 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="136dp"
+        android:layout_height="50dp"
+        android:background="@drawable/buttons"
+        android:letterSpacing="0"
         android:onClick="SubmitRun"
         android:text="@string/btn_SubmitName"
+        android:textAllCaps="false"
+        android:textSize="@dimen/hint_txt_size"
         app:backgroundTint="@color/marineBlue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.978" />
+        app:layout_constraintVertical_bias="0.33" />
 
     <LinearLayout
         android:id="@+id/layoutRing1"
@@ -668,5 +672,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.167" />
+
+    <TextView
+        android:id="@+id/tv_Resistor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/resistorDefault"
+        android:textSize="@dimen/txt_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.42" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
