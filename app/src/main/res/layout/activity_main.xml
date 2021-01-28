@@ -78,24 +78,6 @@
             app:srcCompat="@drawable/gruppe_4" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="136dp"
-        android:layout_height="50dp"
-        android:background="@drawable/buttons"
-        android:letterSpacing="0"
-        android:onClick="SubmitRun"
-        android:text="@string/btn_SubmitName"
-        android:textAllCaps="false"
-        android:textSize="@dimen/hint_txt_size"
-        app:backgroundTint="@color/marineBlue"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.33" />
-
     <LinearLayout
         android:id="@+id/layoutRing1"
         android:layout_width="45dp"
@@ -685,5 +667,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.42" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="150dp"
+        android:layout_height="68dp"
+        android:letterSpacing="0"
+        android:text="@string/btn_SubmitName"
+        android:textAllCaps="false"
+        android:textSize="@dimen/hint_txt_size"
+        android:onClick="SubmitRun"
+        app:backgroundTint="@color/marineBlue"
+        app:cornerRadius="@dimen/btn_Corner"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3299" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
