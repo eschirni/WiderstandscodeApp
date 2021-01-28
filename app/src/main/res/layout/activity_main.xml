@@ -6,6 +6,67 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/tv_Resistor2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/toleranceDefault"
+        android:textSize="@dimen/txt_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.129"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.563" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="95dp"
+        android:layout_height="58dp"
+        android:letterSpacing="0"
+        android:onClick="SubmitRun"
+        android:text="@string/btn_Copy"
+        android:textAllCaps="false"
+        android:textSize="@dimen/hint_txt_size"
+        app:backgroundTint="@color/marineBlue"
+        app:cornerRadius="@dimen/btn_Corner"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.895"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.566" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="150dp"
+        android:layout_height="68dp"
+        android:letterSpacing="0"
+        android:onClick="SubmitRun"
+        android:text="@string/btn_SubmitName"
+        android:textAllCaps="false"
+        android:textSize="@dimen/hint_txt_size"
+        app:backgroundTint="@color/marineBlue"
+        app:cornerRadius="@dimen/btn_Corner"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3299" />
+
+    <TextView
+        android:id="@+id/tv_Resistor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/resistorDefault"
+        android:textSize="@dimen/txt_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.129"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.457" />
+
     <ImageView
         android:id="@+id/view_Resistor"
         android:layout_width="wrap_content"
@@ -17,6 +78,24 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.051"
         app:srcCompat="@drawable/gruppe_3" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="95dp"
+        android:layout_height="58dp"
+        android:letterSpacing="0"
+        android:onClick="SubmitRun"
+        android:text="@string/btn_Copy"
+        android:textAllCaps="false"
+        android:textSize="@dimen/hint_txt_size"
+        app:backgroundTint="@color/marineBlue"
+        app:cornerRadius="@dimen/btn_Corner"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.895"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.454" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -654,35 +733,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.167" />
-
-    <TextView
-        android:id="@+id/tv_Resistor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/resistorDefault"
-        android:textSize="@dimen/txt_size"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.42" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="150dp"
-        android:layout_height="68dp"
-        android:letterSpacing="0"
-        android:text="@string/btn_SubmitName"
-        android:textAllCaps="false"
-        android:textSize="@dimen/hint_txt_size"
-        android:onClick="SubmitRun"
-        app:backgroundTint="@color/marineBlue"
-        app:cornerRadius="@dimen/btn_Corner"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3299" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
