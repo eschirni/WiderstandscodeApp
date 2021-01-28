@@ -246,6 +246,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_Reset).setVisibility(View.VISIBLE);
     }
     public void Reset_Strings_and_Colors(View view) {
+        colorlist = new ArrayList<String>();
         tv_Resistor.setText(R.string.resistorDefault);
         tv_Tolerance.setText(R.string.toleranceDefault);
         in_Ring1.setImageResource(R.drawable.gruppe_4);
