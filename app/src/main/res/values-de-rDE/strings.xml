@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Widerstandscode</string>
+    <string name="btn_SubmitName">Berechnen</string>
+    <string name="hintSetColor">Wähle die Farben aus</string>
+</resources>

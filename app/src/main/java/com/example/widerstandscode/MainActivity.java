@@ -2,6 +2,7 @@ package com.example.widerstandscode;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
@@ -16,6 +17,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
     ImageView in_Ring1;
@@ -35,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        SetLocale();
         setContentView(R.layout.activity_main);
         in_Ring1 = findViewById(R.id.iv_Ring1);
         in_Ring2 = findViewById(R.id.iv_Ring2);
@@ -47,6 +50,11 @@ public class MainActivity extends AppCompatActivity {
         tv_color4 = findViewById(R.id.tv_color4);
         tv_color5 = findViewById(R.id.tv_color5);
         ToleranzTable();
+    }
+    private void SetLocale(){
+        String language = Locale.getDefault().getDisplayLanguage();
+        Locale sysLocale = new Locale(language);
+        Locale.setDefault(sysLocale);
     }
     public void SelectColor(View view){
         String id = view.getTag().toString();

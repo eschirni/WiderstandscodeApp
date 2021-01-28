@@ -1,4 +1,5 @@
 <resources>
-    <string name="app_name">Widerstandscode</string>
+    <string name="app_name">Resistor Code</string>
     <string name="btn_SubmitName">Submit</string>
+    <string name="hintSetColor">Set the colors</string>
 </resources>
