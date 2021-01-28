@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
+    boolean[] b_selected = new boolean[5];
     ImageView in_Ring1;
     ImageView in_Ring2;
     ImageView in_Ring3;
@@ -48,16 +49,22 @@ public class MainActivity extends AppCompatActivity {
         tv_color5 = findViewById(R.id.tv_color5);
         tv_Resistor = findViewById(R.id.tv_Resistor);
         tv_Tolerance = findViewById(R.id.tv_Tolerance);
+        for (int i = 0; i < 5; i++) {
+            b_selected[i] = false;
+        }
         Generate_Tolerance_Table();
     }
     public void Run_Calculation(View view){
-        colors = colorlist.toArray(new String[colorlist.size()]);
-        Resistor_Values_and_Multiplicator();
-        if(colors.length > 3) {
-            double toleranz = Get_Tolerance(colors, 4);
-            String strToleranz = Double.toString(toleranz);
-            strToleranz += " %";
-            tv_Tolerance.setText(strToleranz);
+        if(Valid() == true)
+        {
+            colors = colorlist.toArray(new String[colorlist.size()]);
+            Resistor_Values_and_Multiplicator();
+            if(colors.length > 3) {
+                double toleranz = Get_Tolerance(colors, 4);
+                String strToleranz = Double.toString(toleranz);
+                strToleranz += " %";
+                tv_Tolerance.setText(strToleranz);
+            }
         }
     }
     private void Resistor_Values_and_Multiplicator(){
@@ -94,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
         generalToleranz.put("green", 0.5);
         generalToleranz.put("blue", 0.25);
         generalToleranz.put("violet", 0.1);
+        generalToleranz.put("grey", 0.05);
         generalToleranz.put("gold", 5.0);
         generalToleranz.put("silver", 10.0);
     }
@@ -118,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
             colorlist.set(index, id);
         }
         ChangeColor(index);
+        b_selected[index] = true;
     }
     private void ChangeColor(int index){
         switch (index){
@@ -237,6 +246,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_Reset).setVisibility(View.VISIBLE);
     }
     public void Reset_Strings_and_Colors(View view) {
+        colorlist = new ArrayList<String>();
         tv_Resistor.setText(R.string.resistorDefault);
         tv_Tolerance.setText(R.string.toleranceDefault);
         in_Ring1.setImageResource(R.drawable.gruppe_4);
@@ -244,10 +254,21 @@ public class MainActivity extends AppCompatActivity {
         in_Ring3.setImageResource(R.drawable.gruppe_4);
         in_Ring4.setImageResource(R.drawable.gruppe_4);
         in_Ring5.setImageResource(R.drawable.gruppe_4);
+        tv_color.setBackgroundColor(Color.argb(0, 255, 255, 255));
+        tv_color2.setBackgroundColor(Color.argb(0, 255, 255, 255));
+        tv_color3.setBackgroundColor(Color.argb(0, 255, 255, 255));
+        tv_color4.setBackgroundColor(Color.argb(0, 255, 255, 255));
+        tv_color5.setBackgroundColor(Color.argb(0, 255, 255, 255));
     }
     private void SetLocale(){
         String language = Locale.getDefault().getDisplayLanguage();
         Locale sysLocale = new Locale(language);
         Locale.setDefault(sysLocale);
+    }
+    private boolean Valid() {
+        if(b_selected[4] == true && b_selected[3] == true && (b_selected[1] == true || b_selected[2] == true || b_selected[3] == true)) //Überprüft ob Toleranz, Multiplier und midestens eine Farbe ausgewählt ist
+            return true;
+        else
+            return false;
     }
 }
