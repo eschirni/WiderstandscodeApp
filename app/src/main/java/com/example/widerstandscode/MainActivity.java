@@ -2,15 +2,10 @@ package com.example.widerstandscode;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.res.Configuration;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
-import android.media.Image;
 import android.os.Bundle;
-import android.provider.CalendarContract;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -53,95 +48,19 @@ public class MainActivity extends AppCompatActivity {
         tv_color5 = findViewById(R.id.tv_color5);
         tv_Resistor = findViewById(R.id.tv_Resistor);
         tv_Tolerance = findViewById(R.id.tv_Tolerance);
-        ToleranzTable();
+        Generate_Tolerance_Table();
     }
-    private void SetLocale(){
-        String language = Locale.getDefault().getDisplayLanguage();
-        Locale sysLocale = new Locale(language);
-        Locale.setDefault(sysLocale);
-    }
-    public void SelectColor(View view){
-        String id = view.getTag().toString();
-        int index = Integer.parseInt(Character.toString(id.charAt(id.length() - 1)));
-        id = id.substring(0, id.length() - 1);
-        if(index >= colorlist.size()) {
-            colorlist.add(index , id);
-        }
-        else{
-            colorlist.set(index, id);
-        }
-        ChangeColor(index);
-    }
-    public void ColorSelection(View view) {
-        String id = view.getTag().toString();
-        int index = Integer.parseInt(id);
-        All_Elements_Invisible();
-        //die Layouts sind durchnummeriert von 1-5, der switch-case prüft im welchen Layout die Farbe ausgewählt wurde
-        //um die richtige Farbe zu wechseln
-        switch(index){
-            case 1:
-                findViewById(R.id.layoutRing1).setVisibility(View.VISIBLE);
-                break;
-            case 2:
-                findViewById(R.id.layoutRing2).setVisibility(View.VISIBLE);
-                break;
-            case 3:
-                findViewById(R.id.layoutRing3).setVisibility(View.VISIBLE);
-                break;
-            case 4:
-                findViewById(R.id.layoutRing4).setVisibility(View.VISIBLE);
-                break;
-            case 5:
-                findViewById(R.id.layoutRing5).setVisibility(View.VISIBLE);
-                break;
-        }
-    }
-    private void ChangeColor(int index){
-        switch (index){
-            case(0):
-                in_Ring1.setImageResource(getResources().getIdentifier(colorlist.get(index) , "drawable", getPackageName()));
-                findViewById(R.id.layoutRing1).setVisibility(View.INVISIBLE); //Layout wird wieder unsichtbar
-                ColorResistor(index, tv_color); //Wählt die Farbe je nach der Liste aus
-                break;
-            case(1):
-                in_Ring2.setImageResource(getResources().getIdentifier(colorlist.get(index) , "drawable", getPackageName()));
-                findViewById(R.id.layoutRing2).setVisibility(View.INVISIBLE);
-                ColorResistor(index, tv_color2);
-                break;
-            case(2):
-                in_Ring3.setImageResource(getResources().getIdentifier(colorlist.get(index) , "drawable", getPackageName()));
-                findViewById(R.id.layoutRing3).setVisibility(View.INVISIBLE);
-                ColorResistor(index, tv_color3);
-                break;
-            case(3):
-                in_Ring4.setImageResource(getResources().getIdentifier(colorlist.get(index) , "drawable", getPackageName()));
-                findViewById(R.id.layoutRing4).setVisibility(View.INVISIBLE);
-                ColorResistor(index, tv_color4);
-                break;
-            case(4):
-                in_Ring5.setImageResource(getResources().getIdentifier(colorlist.get(index) , "drawable", getPackageName()));
-                findViewById(R.id.layoutRing5).setVisibility(View.INVISIBLE);
-                ColorResistor(index, tv_color5);
-                break;
-        }
-        findViewById(R.id.btn_Submit).setVisibility(View.VISIBLE);
-        findViewById(R.id.btn_Cpy1).setVisibility(View.VISIBLE);
-        findViewById(R.id.btn_Cpy2).setVisibility(View.VISIBLE);
-        findViewById(R.id.tv_Resistor).setVisibility(View.VISIBLE);
-        findViewById(R.id.tv_Tolerance).setVisibility(View.VISIBLE);
-    }
-    public void SubmitRun(View view){
+    public void Run_Calculation(View view){
         colors = colorlist.toArray(new String[colorlist.size()]);
-        Values();//macht void mehr sinn?
+        Resistor_Values_and_Multiplicator();
         if(colors.length > 3) {
-            double toleranz = Toleranz(colors, 4);
+            double toleranz = Get_Tolerance(colors, 4);
             String strToleranz = Double.toString(toleranz);
-            Log.d("Toleranz: ", strToleranz);
             strToleranz += " %";
             tv_Tolerance.setText(strToleranz);
         }
     }
-    private void Values(){
+    private void Resistor_Values_and_Multiplicator(){
         String values = "";
         String multiplikator = "1";
         for(int i = 0; i < colors.length; i++)
@@ -158,18 +77,14 @@ public class MainActivity extends AppCompatActivity {
                             multiplikator += "0";
                     }
                 }
+                //else if(colortable[x] == )
             }
         }
-        Log.d("Values Werte: ", values);
-        Log.d("Multiplikator: ", multiplikator);
         values = Integer.toString(Integer.parseInt(multiplikator) * Integer.parseInt(values));
         values += " Ω";
         tv_Resistor.setText(values);
     }
-    private double Toleranz(String[] colors, int pos){
-        return generalToleranz.get(colors[pos]);
-    }
-    private void ToleranzTable(){
+    private void Generate_Tolerance_Table(){
         for (int i = 0; i < colortable.length; i++)
         {
             generalToleranz.put(colortable[i], 0.0);
@@ -182,7 +97,52 @@ public class MainActivity extends AppCompatActivity {
         generalToleranz.put("gold", 5.0);
         generalToleranz.put("silver", 10.0);
     }
-    private void ColorResistor(int index, TextView tv)
+    private double Get_Tolerance(String[] colors, int pos){
+        return generalToleranz.get(colors[pos]);
+    }
+    public void SelectColor(View view){
+        String id = view.getTag().toString();
+        int index = Integer.parseInt(Character.toString(id.charAt(id.length() - 1)));
+        id = id.substring(0, id.length() - 1);
+        if(index >= colorlist.size()) {
+            colorlist.add(index , id);
+        }
+        else{
+            colorlist.set(index, id);
+        }
+        ChangeColor(index);
+    }
+    private void ChangeColor(int index){
+        switch (index){
+            case(0):
+                in_Ring1.setImageResource(getResources().getIdentifier(colorlist.get(index) , "drawable", getPackageName()));
+                findViewById(R.id.layoutRing1).setVisibility(View.INVISIBLE); //Layout wird wieder unsichtbar
+                Change_Color_on_Resistor(index, tv_color); //Wählt die Farbe je nach der Liste aus
+                break;
+            case(1):
+                in_Ring2.setImageResource(getResources().getIdentifier(colorlist.get(index) , "drawable", getPackageName()));
+                findViewById(R.id.layoutRing2).setVisibility(View.INVISIBLE);
+                Change_Color_on_Resistor(index, tv_color2);
+                break;
+            case(2):
+                in_Ring3.setImageResource(getResources().getIdentifier(colorlist.get(index) , "drawable", getPackageName()));
+                findViewById(R.id.layoutRing3).setVisibility(View.INVISIBLE);
+                Change_Color_on_Resistor(index, tv_color3);
+                break;
+            case(3):
+                in_Ring4.setImageResource(getResources().getIdentifier(colorlist.get(index) , "drawable", getPackageName()));
+                findViewById(R.id.layoutRing4).setVisibility(View.INVISIBLE);
+                Change_Color_on_Resistor(index, tv_color4);
+                break;
+            case(4):
+                in_Ring5.setImageResource(getResources().getIdentifier(colorlist.get(index) , "drawable", getPackageName()));
+                findViewById(R.id.layoutRing5).setVisibility(View.INVISIBLE);
+                Change_Color_on_Resistor(index, tv_color5);
+                break;
+        }
+        All_Elements_Visible();
+    }
+    private void Change_Color_on_Resistor(int index, TextView tv)
     {
         switch (colorlist.get(index))
         {
@@ -224,16 +184,63 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
     }
+    public void Show_Color_Selection(View view) {
+        String id = view.getTag().toString();
+        int index = Integer.parseInt(id);
+        All_Elements_Invisible();
+        //die Layouts sind durchnummeriert von 1-5, der switch-case prüft im welchen Layout die Farbe ausgewählt wurde
+        //um die richtige Farbe zu wechseln
+        switch(index){
+            case 1:
+                findViewById(R.id.layoutRing1).setVisibility(View.VISIBLE);
+                break;
+            case 2:
+                findViewById(R.id.layoutRing2).setVisibility(View.VISIBLE);
+                break;
+            case 3:
+                findViewById(R.id.layoutRing3).setVisibility(View.VISIBLE);
+                break;
+            case 4:
+                findViewById(R.id.layoutRing4).setVisibility(View.VISIBLE);
+                break;
+            case 5:
+                findViewById(R.id.layoutRing5).setVisibility(View.VISIBLE);
+                break;
+        }
+    }
     private void All_Elements_Invisible(){
         findViewById(R.id.btn_Submit).setVisibility(View.INVISIBLE);
         findViewById(R.id.btn_Cpy1).setVisibility(View.INVISIBLE);
         findViewById(R.id.btn_Cpy2).setVisibility(View.INVISIBLE);
-        findViewById(R.id.tv_Resistor).setVisibility(View.INVISIBLE);
-        findViewById(R.id.tv_Tolerance).setVisibility(View.INVISIBLE);
+        findViewById(R.id.btn_Reset).setVisibility(View.INVISIBLE);
+        tv_Resistor.setVisibility(View.INVISIBLE);
+        tv_Tolerance.setVisibility(View.INVISIBLE);
         findViewById(R.id.layoutRing1).setVisibility(View.INVISIBLE);
         findViewById(R.id.layoutRing2).setVisibility(View.INVISIBLE);
         findViewById(R.id.layoutRing3).setVisibility(View.INVISIBLE);
         findViewById(R.id.layoutRing4).setVisibility(View.INVISIBLE);
         findViewById(R.id.layoutRing5).setVisibility(View.INVISIBLE);
+    }
+    private void All_Elements_Visible(){
+        findViewById(R.id.btn_Submit).setVisibility(View.VISIBLE);
+        findViewById(R.id.btn_Cpy1).setVisibility(View.VISIBLE);
+        findViewById(R.id.btn_Cpy2).setVisibility(View.VISIBLE);
+        tv_Resistor.setVisibility(View.VISIBLE);
+        tv_Tolerance.setVisibility(View.VISIBLE);
+        findViewById(R.id.btn_Reset).setVisibility(View.VISIBLE);
+    }
+    public void Reset_Strings_and_Colors(View view) {
+        tv_Resistor.setText(R.string.resistorDefault);
+        tv_Tolerance.setText(R.string.toleranceDefault);
+        in_Ring1.setImageResource(R.drawable.gruppe_4);
+        in_Ring2.setImageResource(R.drawable.gruppe_4);
+        in_Ring3.setImageResource(R.drawable.gruppe_4);
+        in_Ring4.setImageResource(R.drawable.gruppe_4);
+        in_Ring5.setImageResource(R.drawable.gruppe_4);
+    }
+    private void SetLocale(){
+        String language = Locale.getDefault().getDisplayLanguage();
+        Locale sysLocale = new Locale(language);
+        Locale.setDefault(sysLocale);
     }
 }

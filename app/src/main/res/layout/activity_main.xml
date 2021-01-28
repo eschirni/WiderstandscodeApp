@@ -7,6 +7,36 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/copyright"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.96" />
+
+    <Button
+        android:id="@+id/btn_Reset"
+        android:layout_width="150dp"
+        android:layout_height="68dp"
+        android:letterSpacing="0"
+        android:onClick="Reset_Strings_and_Colors"
+        android:text="@string/btn_Reset"
+        android:textAllCaps="false"
+        android:textSize="@dimen/hint_txt_size"
+        app:backgroundTint="@color/borderGrey"
+        app:cornerRadius="@dimen/btn_Corner"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.68" />
+
+    <TextView
         android:id="@+id/tv_Tolerance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -24,7 +54,6 @@
         android:layout_width="95dp"
         android:layout_height="58dp"
         android:letterSpacing="0"
-        android:onClick="SubmitRun"
         android:text="@string/btn_Copy"
         android:textAllCaps="false"
         android:textSize="@dimen/hint_txt_size"
@@ -42,7 +71,7 @@
         android:layout_width="150dp"
         android:layout_height="68dp"
         android:letterSpacing="0"
-        android:onClick="SubmitRun"
+        android:onClick="Run_Calculation"
         android:text="@string/btn_SubmitName"
         android:textAllCaps="false"
         android:textSize="@dimen/hint_txt_size"
@@ -84,7 +113,6 @@
         android:layout_width="95dp"
         android:layout_height="58dp"
         android:letterSpacing="0"
-        android:onClick="SubmitRun"
         android:text="@string/btn_Copy"
         android:textAllCaps="false"
         android:textSize="@dimen/hint_txt_size"
@@ -112,7 +140,7 @@
             android:id="@+id/iv_Ring1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="ColorSelection"
+            android:onClick="Show_Color_Selection"
             android:tag="1"
             app:srcCompat="@drawable/gruppe_4" />
 
@@ -122,7 +150,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/white"
-            android:onClick="ColorSelection"
+            android:onClick="Show_Color_Selection"
             android:tag="2"
             app:srcCompat="@drawable/gruppe_4" />
 
@@ -132,7 +160,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/white"
-            android:onClick="ColorSelection"
+            android:onClick="Show_Color_Selection"
             android:tag="3"
             app:srcCompat="@drawable/gruppe_4" />
 
@@ -142,7 +170,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/white"
-            android:onClick="ColorSelection"
+            android:onClick="Show_Color_Selection"
             android:tag="4"
             app:srcCompat="@drawable/gruppe_4" />
 
@@ -152,7 +180,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/white"
-            android:onClick="ColorSelection"
+            android:onClick="Show_Color_Selection"
             android:tag="5"
             app:srcCompat="@drawable/gruppe_4" />
     </LinearLayout>

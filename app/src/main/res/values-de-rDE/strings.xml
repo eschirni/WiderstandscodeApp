@@ -2,8 +2,10 @@
 <resources>
     <string name="app_name">Widerstandscode</string>
     <string name="btn_SubmitName">Berechnen</string>
+    <string name="btn_Reset">Löschen</string>
     <string name="btn_Copy">Copy</string>
     <string name="hintSetColor">Wähle die Farben aus</string>
     <string name="resistorDefault">Widerstandswert</string>
     <string name="toleranceDefault">Toleranz</string>
+    <string name="copyright">© 2021 Bermin Agovic, Elias Schirnick</string>
 </resources>
