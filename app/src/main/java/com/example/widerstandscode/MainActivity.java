@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
     TextView tv_color3;
     TextView tv_color4;
     TextView tv_color5;
+    TextView tv_Resistor;
+    TextView tv_Tolerance;
     private String[] colortable = {"black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white", "gold", "silver"};
     private String[] colors;
     private List<String> colorlist = new ArrayList<String>();
@@ -49,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
         tv_color3 = findViewById(R.id.tv_color3);
         tv_color4 = findViewById(R.id.tv_color4);
         tv_color5 = findViewById(R.id.tv_color5);
+        tv_Resistor = findViewById(R.id.tv_Resistor);
+        tv_Tolerance = findViewById(R.id.tv_Tolerance);
         ToleranzTable();
     }
     private void SetLocale(){
@@ -131,7 +135,10 @@ public class MainActivity extends AppCompatActivity {
         Values();//macht void mehr sinn?
         if(colors.length > 3) {
             double toleranz = Toleranz(colors, 4);
-            Log.d("Toleranz: ", Double.toString(toleranz));
+            String strToleranz = Double.toString(toleranz);
+            Log.d("Toleranz: ", strToleranz);
+            strToleranz += " %";
+            tv_Tolerance.setText(strToleranz);
         }
     }
     private void Values(){
@@ -155,6 +162,9 @@ public class MainActivity extends AppCompatActivity {
         }
         Log.d("Values Werte: ", values);
         Log.d("Multiplikator: ", multiplikator);
+        values = Integer.toString(Integer.parseInt(multiplikator) * Integer.parseInt(values));
+        values += " Ω";
+        tv_Resistor.setText(values);
     }
     private double Toleranz(String[] colors, int pos){
         return generalToleranz.get(colors[pos]);
