@@ -697,7 +697,7 @@
 
     <TextView
         android:id="@+id/tv_color"
-        android:layout_width="28dp"
+        android:layout_width="18dp"
         android:layout_height="67dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -740,7 +740,7 @@
 
     <TextView
         android:id="@+id/tv_color5"
-        android:layout_width="28dp"
+        android:layout_width="18dp"
         android:layout_height="67dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
