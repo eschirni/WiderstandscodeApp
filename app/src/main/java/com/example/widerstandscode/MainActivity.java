@@ -71,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
     public void ColorSelection(View view) {
         String id = view.getTag().toString();
         int index = Integer.parseInt(id);
+        All_Elements_Invisible();
         //die Layouts sind durchnummeriert von 1-5, der switch-case prüft im welchen Layout die Farbe ausgewählt wurde
         //um die richtige Farbe zu wechseln
         switch(index){
@@ -119,6 +120,11 @@ public class MainActivity extends AppCompatActivity {
                 ColorResistor(index, tv_color5);
                 break;
         }
+        findViewById(R.id.btn_Submit).setVisibility(View.VISIBLE);
+        findViewById(R.id.btn_Cpy1).setVisibility(View.VISIBLE);
+        findViewById(R.id.btn_Cpy2).setVisibility(View.VISIBLE);
+        findViewById(R.id.tv_Resistor).setVisibility(View.VISIBLE);
+        findViewById(R.id.tv_Tolerance).setVisibility(View.VISIBLE);
     }
     public void SubmitRun(View view){
         colors = colorlist.toArray(new String[colorlist.size()]);
@@ -208,6 +214,16 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
     }
-
-
+    private void All_Elements_Invisible(){
+        findViewById(R.id.btn_Submit).setVisibility(View.INVISIBLE);
+        findViewById(R.id.btn_Cpy1).setVisibility(View.INVISIBLE);
+        findViewById(R.id.btn_Cpy2).setVisibility(View.INVISIBLE);
+        findViewById(R.id.tv_Resistor).setVisibility(View.INVISIBLE);
+        findViewById(R.id.tv_Tolerance).setVisibility(View.INVISIBLE);
+        findViewById(R.id.layoutRing1).setVisibility(View.INVISIBLE);
+        findViewById(R.id.layoutRing2).setVisibility(View.INVISIBLE);
+        findViewById(R.id.layoutRing3).setVisibility(View.INVISIBLE);
+        findViewById(R.id.layoutRing4).setVisibility(View.INVISIBLE);
+        findViewById(R.id.layoutRing5).setVisibility(View.INVISIBLE);
+    }
 }

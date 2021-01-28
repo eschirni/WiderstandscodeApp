@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/tv_Resistor2"
+        android:id="@+id/tv_Tolerance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/toleranceDefault"
@@ -20,7 +20,7 @@
         app:layout_constraintVertical_bias="0.563" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btn_Cpy2"
         android:layout_width="95dp"
         android:layout_height="58dp"
         android:letterSpacing="0"
@@ -38,7 +38,7 @@
         app:layout_constraintVertical_bias="0.566" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_Submit"
         android:layout_width="150dp"
         android:layout_height="68dp"
         android:letterSpacing="0"
@@ -80,7 +80,7 @@
         app:srcCompat="@drawable/gruppe_3" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn_Cpy1"
         android:layout_width="95dp"
         android:layout_height="58dp"
         android:letterSpacing="0"
