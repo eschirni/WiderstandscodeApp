@@ -7,7 +7,6 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -15,7 +14,6 @@ import android.widget.Toast;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -35,10 +33,11 @@ public class MainActivity extends AppCompatActivity {
     TextView tv_color5;
     TextView tv_Resistor;
     TextView tv_Tolerance;
+    TextView tv_issues;
     private String[] colortable = {"black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white", "gold", "silver"};
     private String[] colors;
     private List<String> colorlist = new ArrayList<String>();
-    private HashMap<String, Double> generalToleranz = new HashMap<String, Double>();
+    private HashMap<String, Double> generalTolerance = new HashMap<String, Double>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         tv_color5 = findViewById(R.id.tv_color5);
         tv_Resistor = findViewById(R.id.tv_Resistor);
         tv_Tolerance = findViewById(R.id.tv_Tolerance);
+        tv_issues = findViewById(R.id.tv_issue);
         for (int i = 0; i < 5; i++) {
             b_selected[i] = false;
         }
@@ -64,21 +64,25 @@ public class MainActivity extends AppCompatActivity {
     public void Run_Calculation(View view){
         if(Valid() == true)
         {
+            tv_issues.setText("");
             colors = colorlist.toArray(new String[colorlist.size()]);
             Resistor_Values_and_Multiplicator();
             if(colors.length > 3) {
-                double toleranz = Get_Tolerance(colors, 4);
-                String strToleranz = Double.toString(toleranz);
-                strToleranz += " %";
-                tv_Tolerance.setText(strToleranz);
+                double tolerance = Get_Tolerance(colors, 4);
+                String strTolerance = Double.toString(tolerance);
+                strTolerance += " %";
+                tv_Tolerance.setText(strTolerance);
             }
+        }
+        else {
+            Issue();
         }
     }
     private void Resistor_Values_and_Multiplicator(){
         String values = "";
         String multiplikator = "1";
         long longValue = 0;
-        double doubleValue = 0;
+        double doubleValue = 0.0;
         for(int i = 0; i < colors.length; i++)
         {
             for(int x = 0; x < this.colortable.length; x++)
@@ -123,19 +127,19 @@ public class MainActivity extends AppCompatActivity {
     private void Generate_Tolerance_Table(){
         for (int i = 0; i < colortable.length; i++)
         {
-            generalToleranz.put(colortable[i], 0.0);
+            generalTolerance.put(colortable[i], 0.0);
         }
-        generalToleranz.put("brown", 1.0);
-        generalToleranz.put("red", 2.0);
-        generalToleranz.put("green", 0.5);
-        generalToleranz.put("blue", 0.25);
-        generalToleranz.put("violet", 0.1);
-        generalToleranz.put("grey", 0.05);
-        generalToleranz.put("gold", 5.0);
-        generalToleranz.put("silver", 10.0);
+        generalTolerance.put("brown", 1.0);
+        generalTolerance.put("red", 2.0);
+        generalTolerance.put("green", 0.5);
+        generalTolerance.put("blue", 0.25);
+        generalTolerance.put("violet", 0.1);
+        generalTolerance.put("grey", 0.05);
+        generalTolerance.put("gold", 5.0);
+        generalTolerance.put("silver", 10.0);
     }
     private double Get_Tolerance(String[] colors, int pos){
-        return generalToleranz.get(colors[pos]);
+        return generalTolerance.get(colors[pos]);
     }
     public void SelectColor(View view){
         String id = view.getTag().toString();
@@ -299,7 +303,7 @@ public class MainActivity extends AppCompatActivity {
         Locale.setDefault(sysLocale);
     }
     private boolean Valid() {
-        if(b_selected[4] == true && b_selected[3] == true && (b_selected[1] == true || b_selected[2] == true || b_selected[3] == true)) //Überprüft ob Toleranz, Multiplier und midestens eine Farbe ausgewählt ist
+        if(b_selected[4] == true && b_selected[3] == true && (b_selected[0] == true || b_selected[1] == true || b_selected[2] == true)) //Überprüft ob Toleranz, Multiplier und midestens eine Farbe ausgewählt ist
             return true;
         else
             return false;
@@ -318,5 +322,8 @@ public class MainActivity extends AppCompatActivity {
         }
         clipboard.setPrimaryClip(data);
         Toast.makeText(getApplicationContext(), R.string.copiedMsg, Toast.LENGTH_SHORT).show();
+    }
+    public void Issue() {
+        tv_issues.setText(R.string.issue);
     }
 }
