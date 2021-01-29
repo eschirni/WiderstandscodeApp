@@ -7,5 +7,6 @@
     <string name="hintSetColor">Wähle die Farben aus</string>
     <string name="resistorDefault">Widerstandswert</string>
     <string name="toleranceDefault">Toleranz</string>
+    <string name="copiedMsg">In die Zwischenablage kopiert!</string>
     <string name="copyright">© 2021 Bermin Agovic, Elias Schirnick</string>
 </resources>

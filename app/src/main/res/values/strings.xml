@@ -6,5 +6,6 @@
     <string name="hintSetColor">Set the colors</string>
     <string name="resistorDefault">Resistor Value</string>
     <string name="toleranceDefault">Tolerance</string>
+    <string name="copiedMsg">Copied to Clipboard!</string>
     <string name="copyright">© 2021 Bermin Agovic, Elias Schirnick</string>
 </resources>
