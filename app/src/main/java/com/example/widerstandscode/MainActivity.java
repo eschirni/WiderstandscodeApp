@@ -2,12 +2,16 @@ package com.example.widerstandscode;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -299,5 +303,20 @@ public class MainActivity extends AppCompatActivity {
             return true;
         else
             return false;
+    }
+
+    public void Copy_to_Clipboard(View view) {
+        ClipboardManager clipboard = (ClipboardManager)getSystemService(Context.CLIPBOARD_SERVICE);
+        ClipData data = ClipData.newPlainText("Zero", "Zero");
+        switch (view.getTag().toString()){
+            case "res":
+                data = ClipData.newPlainText("Resistor", tv_Resistor.getText());
+                break;
+            case "tol":
+                data = ClipData.newPlainText("Tolerance", tv_Tolerance.getText());
+                break;
+        }
+        clipboard.setPrimaryClip(data);
+        Toast.makeText(getApplicationContext(), R.string.copiedMsg, Toast.LENGTH_SHORT).show();
     }
 }
