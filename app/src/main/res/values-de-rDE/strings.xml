@@ -7,6 +7,7 @@
     <string name="hintSetColor">Wähle die Farben aus</string>
     <string name="resistorDefault">Widerstandswert</string>
     <string name="toleranceDefault">Toleranz</string>
-    <string name="copiedMsg">In die Zwischenablage kopiert!</string>
+    <string name="copiedMsg">In Zwischenablage gespeichert</string>
     <string name="copyright">© 2021 Bermin Agovic, Elias Schirnick</string>
+    <string name="issue">Es müssen Farben für Toleranz, Multiplikator und für mindestens einen Wert gesetzt sein</string>
 </resources>
