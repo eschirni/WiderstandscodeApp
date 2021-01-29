@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/copyright"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/copyright"
@@ -66,23 +66,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.566" />
 
-    <Button
-        android:id="@+id/btn_Submit"
-        android:layout_width="150dp"
-        android:layout_height="68dp"
-        android:letterSpacing="0"
-        android:onClick="Run_Calculation"
-        android:text="@string/btn_SubmitName"
-        android:textAllCaps="false"
-        android:textSize="@dimen/hint_txt_size"
-        app:backgroundTint="@color/marineBlue"
-        app:cornerRadius="@dimen/btn_Corner"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3299" />
-
     <TextView
         android:id="@+id/tv_Resistor"
         android:layout_width="wrap_content"
@@ -124,6 +107,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.454" />
+
+    <Button
+        android:id="@+id/btn_Submit"
+        android:layout_width="150dp"
+        android:layout_height="68dp"
+        android:letterSpacing="0"
+        android:onClick="Run_Calculation"
+        android:text="@string/btn_SubmitName"
+        android:textAllCaps="false"
+        android:textSize="@dimen/hint_txt_size"
+        app:backgroundTint="@color/marineBlue"
+        app:cornerRadius="@dimen/btn_Corner"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.36" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -183,16 +183,16 @@
 
     <LinearLayout
         android:id="@+id/layoutRing1"
-        android:layout_width="45dp"
-        android:layout_height="440dp"
+        android:layout_width="51dp"
+        android:layout_height="546dp"
         android:orientation="vertical"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.045"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.776">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.0">
 
         <ImageView
             android:id="@+id/black0"
@@ -267,6 +267,14 @@
             app:srcCompat="@drawable/grey" />
 
         <ImageView
+            android:id="@+id/white0"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="white0"
+            app:srcCompat="@drawable/white" />
+
+        <ImageView
             android:id="@+id/gold0"
             android:layout_width="@dimen/color_buttons_size"
             android:layout_height="@dimen/color_buttons_size"
@@ -281,25 +289,26 @@
             android:onClick="SelectColor"
             android:tag="silver0"
             app:srcCompat="@drawable/silver" />
+
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/layoutRing2"
-        android:layout_width="45dp"
-        android:layout_height="440dp"
+        android:layout_width="46dp"
+        android:layout_height="547dp"
         android:orientation="vertical"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.258"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.776">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.0">
 
         <ImageView
             android:id="@+id/black1"
-            android:layout_width="@dimen/color_buttons_size"
-            android:layout_height="@dimen/color_buttons_size"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
             android:onClick="SelectColor"
             android:tag="black1"
             app:srcCompat="@drawable/black" />
@@ -369,6 +378,14 @@
             app:srcCompat="@drawable/grey" />
 
         <ImageView
+            android:id="@+id/white1"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="white1"
+            app:srcCompat="@drawable/white" />
+
+        <ImageView
             android:id="@+id/gold1"
             android:layout_width="@dimen/color_buttons_size"
             android:layout_height="@dimen/color_buttons_size"
@@ -383,20 +400,21 @@
             android:onClick="SelectColor"
             android:tag="silver1"
             app:srcCompat="@drawable/silver" />
+
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/layoutRing3"
-        android:layout_width="45dp"
-        android:layout_height="440dp"
+        android:layout_width="46dp"
+        android:layout_height="551dp"
         android:orientation="vertical"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.474"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.776">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.0">
 
         <ImageView
             android:id="@+id/black2"
@@ -471,6 +489,14 @@
             app:srcCompat="@drawable/grey" />
 
         <ImageView
+            android:id="@+id/white2"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="white2"
+            app:srcCompat="@drawable/white" />
+
+        <ImageView
             android:id="@+id/gold2"
             android:layout_width="@dimen/color_buttons_size"
             android:layout_height="@dimen/color_buttons_size"
@@ -485,20 +511,21 @@
             android:onClick="SelectColor"
             android:tag="silver2"
             app:srcCompat="@drawable/silver" />
+
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/layoutRing4"
-        android:layout_width="45dp"
-        android:layout_height="440dp"
+        android:layout_width="48dp"
+        android:layout_height="555dp"
         android:orientation="vertical"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.692"
+        app:layout_constraintHorizontal_bias="0.706"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.776">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.0">
 
         <ImageView
             android:id="@+id/black3"
@@ -573,6 +600,14 @@
             app:srcCompat="@drawable/grey" />
 
         <ImageView
+            android:id="@+id/white3"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="white3"
+            app:srcCompat="@drawable/white" />
+
+        <ImageView
             android:id="@+id/gold3"
             android:layout_width="@dimen/color_buttons_size"
             android:layout_height="@dimen/color_buttons_size"
@@ -591,16 +626,16 @@
 
     <LinearLayout
         android:id="@+id/layoutRing5"
-        android:layout_width="45dp"
-        android:layout_height="440dp"
+        android:layout_width="46dp"
+        android:layout_height="551dp"
         android:orientation="vertical"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.928"
+        app:layout_constraintHorizontal_bias="0.91"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.776">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.0">
 
         <ImageView
             android:id="@+id/black4"
@@ -673,6 +708,14 @@
             android:onClick="SelectColor"
             android:tag="grey4"
             app:srcCompat="@drawable/grey" />
+
+        <ImageView
+            android:id="@+id/white4"
+            android:layout_width="@dimen/color_buttons_size"
+            android:layout_height="@dimen/color_buttons_size"
+            android:onClick="SelectColor"
+            android:tag="white4"
+            app:srcCompat="@drawable/white" />
 
         <ImageView
             android:id="@+id/gold4"

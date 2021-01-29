@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -70,24 +73,46 @@ public class MainActivity extends AppCompatActivity {
     private void Resistor_Values_and_Multiplicator(){
         String values = "";
         String multiplikator = "1";
+        long longValue = 0;
+        double doubleValue = 0;
         for(int i = 0; i < colors.length; i++)
         {
             for(int x = 0; x < this.colortable.length; x++)
             {
-                if(colors[i].equals(colortable[x]) && x < 10) {
+                if(colors[i].equals(colortable[x])) {
                     if(i<=2){
                         values += Integer.toString(x);
                         x = this.colortable.length;
                     }
                     if(i == 3){
-                        for(int y = 0; y <x ; y++)
-                            multiplikator += "0";
+                        if(colors[i].equals("white") || colors[i].equals("grey")){
+                            multiplikator = "1";
+                        }
+                        else if(colors[i].equals("gold")){
+                            multiplikator = "0.1";
+                        }
+                        else if(colors[i].equals("silver")){
+                            multiplikator = "0.01";
+                        }
+                        else {
+                            for (int y = 0; y < x; y++)
+                                multiplikator += "0";
+                        }
                     }
                 }
-                //else if(colortable[x] == )
             }
         }
-        values = Integer.toString(Integer.parseInt(multiplikator) * Integer.parseInt(values));
+        double doubleMulti = Double.parseDouble(multiplikator);
+        if(doubleMulti < 1){
+            doubleValue = doubleMulti * Double.parseDouble(values);
+            BigDecimal bd = new BigDecimal(doubleValue).setScale(2, RoundingMode.HALF_EVEN);
+            doubleValue = bd.doubleValue();
+            values = Double.toString(doubleValue);
+        }
+        else{
+            longValue = Long.parseLong(multiplikator) * Long.parseLong(values);
+            values = Long.toString(longValue);
+        }
         values += " Ω";
         tv_Resistor.setText(values);
     }
@@ -236,6 +261,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.layoutRing3).setVisibility(View.INVISIBLE);
         findViewById(R.id.layoutRing4).setVisibility(View.INVISIBLE);
         findViewById(R.id.layoutRing5).setVisibility(View.INVISIBLE);
+        findViewById(R.id.copyright).setVisibility(View.INVISIBLE);
     }
     private void All_Elements_Visible(){
         findViewById(R.id.btn_Submit).setVisibility(View.VISIBLE);
@@ -244,6 +270,7 @@ public class MainActivity extends AppCompatActivity {
         tv_Resistor.setVisibility(View.VISIBLE);
         tv_Tolerance.setVisibility(View.VISIBLE);
         findViewById(R.id.btn_Reset).setVisibility(View.VISIBLE);
+        findViewById(R.id.copyright).setVisibility(View.VISIBLE);
     }
     public void Reset_Strings_and_Colors(View view) {
         colorlist = new ArrayList<String>();
