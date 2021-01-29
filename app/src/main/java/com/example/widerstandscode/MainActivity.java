@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
         id = id.substring(0, id.length() - 1);
         int pos = (index - colorlist.size())+1;
         if(pos > 1){
-            for(int i = colorlist.size()-1;i<pos-1;i++){
+            for(int i = colorlist.size()-1;i<index-1;i++){
                 colorlist.add("null");
             }
             colorlist.add(index, id);
