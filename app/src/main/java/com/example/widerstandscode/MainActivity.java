@@ -236,6 +236,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.layoutRing3).setVisibility(View.INVISIBLE);
         findViewById(R.id.layoutRing4).setVisibility(View.INVISIBLE);
         findViewById(R.id.layoutRing5).setVisibility(View.INVISIBLE);
+        findViewById(R.id.copyright).setVisibility(View.INVISIBLE);
     }
     private void All_Elements_Visible(){
         findViewById(R.id.btn_Submit).setVisibility(View.VISIBLE);
@@ -244,6 +245,7 @@ public class MainActivity extends AppCompatActivity {
         tv_Resistor.setVisibility(View.VISIBLE);
         tv_Tolerance.setVisibility(View.VISIBLE);
         findViewById(R.id.btn_Reset).setVisibility(View.VISIBLE);
+        findViewById(R.id.copyright).setVisibility(View.VISIBLE);
     }
     public void Reset_Strings_and_Colors(View view) {
         colorlist = new ArrayList<String>();
