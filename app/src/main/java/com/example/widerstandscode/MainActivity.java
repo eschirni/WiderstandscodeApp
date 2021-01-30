@@ -1,12 +1,14 @@
 package com.example.widerstandscode;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.motion.widget.Debug;
 
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     TextView tv_Resistor;
     TextView tv_Tolerance;
     TextView tv_issues;
+    boolean visible = false;
     private String[] colortable = {"black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white", "gold", "silver"};
     private String[] colors;
     private List<String> colorlist = new ArrayList<String>();
@@ -241,20 +244,57 @@ public class MainActivity extends AppCompatActivity {
         //um die richtige Farbe zu wechseln
         switch(index){
             case 1:
-                findViewById(R.id.layoutRing1).setVisibility(View.VISIBLE);
+                if(this.visible){
+                    findViewById(R.id.layoutRing1).setVisibility(View.INVISIBLE);
+                    All_Elements_Visible();
+                    this.visible = false; //kann man weglassen
+                }
+                else{
+                    findViewById(R.id.layoutRing1).setVisibility(View.VISIBLE);
+                    this.visible = true;
+                }
                 break;
             case 2:
-                findViewById(R.id.layoutRing2).setVisibility(View.VISIBLE);
+                if(this.visible){
+                    findViewById(R.id.layoutRing2).setVisibility(View.INVISIBLE);
+                    All_Elements_Visible();
+                    this.visible = false;
+                }
+                else{
+                    findViewById(R.id.layoutRing2).setVisibility(View.VISIBLE);
+                    this.visible = true;
+                }
                 break;
             case 3:
-                findViewById(R.id.layoutRing3).setVisibility(View.VISIBLE);
-                break;
+                if(this.visible){
+                    findViewById(R.id.layoutRing3).setVisibility(View.INVISIBLE);
+                    All_Elements_Visible();
+                    this.visible = false;
+                }
+                else{
+                    findViewById(R.id.layoutRing3).setVisibility(View.VISIBLE);
+                    this.visible = true;
+                }                break;
             case 4:
-                findViewById(R.id.layoutRing4).setVisibility(View.VISIBLE);
-                break;
+                if(this.visible){
+                    findViewById(R.id.layoutRing4).setVisibility(View.INVISIBLE);
+                    All_Elements_Visible();
+                    this.visible = false;
+                }
+                else{
+                    findViewById(R.id.layoutRing4).setVisibility(View.VISIBLE);
+                    this.visible = true;
+                }                break;
             case 5:
-                findViewById(R.id.layoutRing5).setVisibility(View.VISIBLE);
-                break;
+                if(this.visible){
+                    findViewById(R.id.layoutRing5).setVisibility(View.INVISIBLE);
+                    All_Elements_Visible();
+                    this.visible = false;
+                }
+                else{
+                    findViewById(R.id.layoutRing5).setVisibility(View.VISIBLE);
+                    this.visible = true;
+                }                break;
         }
     }
     private void All_Elements_Invisible(){
@@ -279,6 +319,7 @@ public class MainActivity extends AppCompatActivity {
         tv_Tolerance.setVisibility(View.VISIBLE);
         findViewById(R.id.btn_Reset).setVisibility(View.VISIBLE);
         findViewById(R.id.copyright).setVisibility(View.VISIBLE);
+        this.visible = false;
     }
     public void Reset_Strings_and_Colors(View view) {
         colorlist = new ArrayList<String>();
