@@ -4,6 +4,15 @@
     <dimen name="color_buttons_size">40sp</dimen>
     <dimen name="hint_txt_size">20sp</dimen>
     <dimen name="txt_size">30sp</dimen>
+    <dimen name="txt_copyright_size">14sp</dimen>
     <dimen name="issue_size">20sp</dimen>
     <dimen name="btn_Corner">30sp</dimen>
+    <dimen name="btn_width">150sp</dimen>
+    <dimen name="btn_height">67sp</dimen>
+    <dimen name="btn_small_width">120sp</dimen>
+    <dimen name="btn_small_height">60sp</dimen>
+    <dimen name="color_first_size">18sp</dimen>
+    <dimen name="color_last_size">16sp</dimen>
+    <dimen name="color_middle_size">15sp</dimen>
+    <dimen name="color_height">67sp</dimen>
 </resources>

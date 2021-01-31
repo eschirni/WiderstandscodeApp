@@ -1,15 +1,12 @@
 package com.example.widerstandscode;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.motion.widget.Debug;
 
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.text.Layout;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -169,32 +166,32 @@ public class MainActivity extends AppCompatActivity {
         switch (index){
             case(0):
                 in_Ring1.setImageResource(getResources().getIdentifier(colorlist.get(index) , "drawable", getPackageName()));
-                findViewById(R.id.layoutRing1).setVisibility(View.INVISIBLE); //Layout wird wieder unsichtbar
-                findViewById(R.id.scrolling1).setVisibility(View.INVISIBLE);
+                findViewById(R.id.lyt_Colors1).setVisibility(View.INVISIBLE); //Layout wird wieder unsichtbar
+                findViewById(R.id.sv_Color1).setVisibility(View.INVISIBLE);
                 Change_Color_on_Resistor(index, tv_color); //Wählt die Farbe je nach der Liste aus
                 break;
             case(1):
                 in_Ring2.setImageResource(getResources().getIdentifier(colorlist.get(index) , "drawable", getPackageName()));
-                findViewById(R.id.layoutRing2).setVisibility(View.INVISIBLE);
-                findViewById(R.id.scrolling2).setVisibility(View.INVISIBLE);
+                findViewById(R.id.lyt_Colors2).setVisibility(View.INVISIBLE);
+                findViewById(R.id.sv_Color2).setVisibility(View.INVISIBLE);
                 Change_Color_on_Resistor(index, tv_color2);
                 break;
             case(2):
                 in_Ring3.setImageResource(getResources().getIdentifier(colorlist.get(index) , "drawable", getPackageName()));
-                findViewById(R.id.layoutRing3).setVisibility(View.INVISIBLE);
-                findViewById(R.id.scrolling3).setVisibility(View.INVISIBLE);
+                findViewById(R.id.lyt_Colors3).setVisibility(View.INVISIBLE);
+                findViewById(R.id.sv_Color3).setVisibility(View.INVISIBLE);
                 Change_Color_on_Resistor(index, tv_color3);
                 break;
             case(3):
                 in_Ring4.setImageResource(getResources().getIdentifier(colorlist.get(index) , "drawable", getPackageName()));
-                findViewById(R.id.layoutRing4).setVisibility(View.INVISIBLE);
-                findViewById(R.id.scrolling4).setVisibility(View.INVISIBLE);
+                findViewById(R.id.lyt_Colors4).setVisibility(View.INVISIBLE);
+                findViewById(R.id.sv_Color4).setVisibility(View.INVISIBLE);
                 Change_Color_on_Resistor(index, tv_color4);
                 break;
             case(4):
                 in_Ring5.setImageResource(getResources().getIdentifier(colorlist.get(index) , "drawable", getPackageName()));
-                findViewById(R.id.layoutRing5).setVisibility(View.INVISIBLE);
-                findViewById(R.id.scrolling5).setVisibility(View.INVISIBLE);
+                findViewById(R.id.lyt_Colors5).setVisibility(View.INVISIBLE);
+                findViewById(R.id.sv_Color5).setVisibility(View.INVISIBLE);
                 Change_Color_on_Resistor(index, tv_color5);
                 break;
         }
@@ -262,30 +259,30 @@ public class MainActivity extends AppCompatActivity {
     private View Get_ColorSelection_Layout(int index){
         switch(index){
             case 1:
-                return findViewById(R.id.layoutRing1);
+                return findViewById(R.id.lyt_Colors1);
             case 2:
-                return findViewById(R.id.layoutRing2);
+                return findViewById(R.id.lyt_Colors2);
             case 3:
-                return findViewById(R.id.layoutRing3);
+                return findViewById(R.id.lyt_Colors3);
             case 4:
-                return findViewById(R.id.layoutRing4);
+                return findViewById(R.id.lyt_Colors4);
             case 5:
-                return findViewById(R.id.layoutRing5);
+                return findViewById(R.id.lyt_Colors5);
         }
         return null;
     }
     private View Get_ScrollView(int index){
         switch(index){
             case 1:
-                return findViewById(R.id.scrolling1);
+                return findViewById(R.id.sv_Color1);
             case 2:
-                return findViewById(R.id.scrolling2);
+                return findViewById(R.id.sv_Color2);
             case 3:
-                return findViewById(R.id.scrolling3);
+                return findViewById(R.id.sv_Color3);
             case 4:
-                return findViewById(R.id.scrolling4);
+                return findViewById(R.id.sv_Color4);
             case 5:
-                return findViewById(R.id.scrolling5);
+                return findViewById(R.id.sv_Color5);
         }
         return null;
     }
@@ -296,12 +293,12 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_Reset).setVisibility(View.INVISIBLE);
         tv_Resistor.setVisibility(View.INVISIBLE);
         tv_Tolerance.setVisibility(View.INVISIBLE);
-        findViewById(R.id.layoutRing1).setVisibility(View.INVISIBLE);
-        findViewById(R.id.layoutRing2).setVisibility(View.INVISIBLE);
-        findViewById(R.id.layoutRing3).setVisibility(View.INVISIBLE);
-        findViewById(R.id.layoutRing4).setVisibility(View.INVISIBLE);
-        findViewById(R.id.layoutRing5).setVisibility(View.INVISIBLE);
-        findViewById(R.id.copyright).setVisibility(View.INVISIBLE);
+        findViewById(R.id.lyt_Colors1).setVisibility(View.INVISIBLE);
+        findViewById(R.id.lyt_Colors2).setVisibility(View.INVISIBLE);
+        findViewById(R.id.lyt_Colors3).setVisibility(View.INVISIBLE);
+        findViewById(R.id.lyt_Colors4).setVisibility(View.INVISIBLE);
+        findViewById(R.id.lyt_Colors5).setVisibility(View.INVISIBLE);
+        findViewById(R.id.tv_Copyright).setVisibility(View.INVISIBLE);
     }
     private void All_Elements_Visible(){
         findViewById(R.id.btn_Submit).setVisibility(View.VISIBLE);
@@ -310,7 +307,7 @@ public class MainActivity extends AppCompatActivity {
         tv_Resistor.setVisibility(View.VISIBLE);
         tv_Tolerance.setVisibility(View.VISIBLE);
         findViewById(R.id.btn_Reset).setVisibility(View.VISIBLE);
-        findViewById(R.id.copyright).setVisibility(View.VISIBLE);
+        findViewById(R.id.tv_Copyright).setVisibility(View.VISIBLE);
         this.visible = false;
     }
     public void Reset_Strings_and_Colors(View view) {
