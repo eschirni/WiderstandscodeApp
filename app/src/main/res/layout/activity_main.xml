@@ -788,10 +788,10 @@
         android:layout_height="67dp"
         app:layout_constraintBottom_toBottomOf="@+id/view_Resistor"
         app:layout_constraintEnd_toEndOf="@+id/view_Resistor"
-        app:layout_constraintHorizontal_bias="0.312"
-        app:layout_constraintStart_toStartOf="@+id/view_Resistor"
+        app:layout_constraintHorizontal_bias="0.36"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tv_color3"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.2" />
 
     <TextView
         android:id="@+id/tv_color2"
@@ -799,8 +799,8 @@
         android:layout_height="67dp"
         app:layout_constraintBottom_toBottomOf="@+id/view_Resistor"
         app:layout_constraintEnd_toEndOf="@+id/view_Resistor"
-        app:layout_constraintHorizontal_bias="0.42"
-        app:layout_constraintStart_toStartOf="@+id/view_Resistor"
+        app:layout_constraintHorizontal_bias="0.441"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view_Resistor"
         app:layout_constraintVertical_bias="0.4" />
 
@@ -816,12 +816,12 @@
 
     <TextView
         android:id="@+id/tv_color4"
-        android:layout_width="16dp"
+        android:layout_width="15dp"
         android:layout_height="67dp"
         app:layout_constraintBottom_toBottomOf="@+id/view_Resistor"
         app:layout_constraintEnd_toEndOf="@+id/view_Resistor"
-        app:layout_constraintHorizontal_bias="0.58"
-        app:layout_constraintStart_toStartOf="@+id/view_Resistor"
+        app:layout_constraintHorizontal_bias="0.562"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view_Resistor"
         app:layout_constraintVertical_bias="0.4" />
 
@@ -831,7 +831,7 @@
         android:layout_height="67dp"
         app:layout_constraintBottom_toBottomOf="@+id/view_Resistor"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.676"
+        app:layout_constraintHorizontal_bias="0.649"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view_Resistor"
         app:layout_constraintVertical_bias="0.4" />
