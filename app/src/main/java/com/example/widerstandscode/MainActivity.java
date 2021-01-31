@@ -8,6 +8,7 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Layout;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -169,26 +170,31 @@ public class MainActivity extends AppCompatActivity {
             case(0):
                 in_Ring1.setImageResource(getResources().getIdentifier(colorlist.get(index) , "drawable", getPackageName()));
                 findViewById(R.id.layoutRing1).setVisibility(View.INVISIBLE); //Layout wird wieder unsichtbar
+                findViewById(R.id.scrolling1).setVisibility(View.INVISIBLE);
                 Change_Color_on_Resistor(index, tv_color); //Wählt die Farbe je nach der Liste aus
                 break;
             case(1):
                 in_Ring2.setImageResource(getResources().getIdentifier(colorlist.get(index) , "drawable", getPackageName()));
                 findViewById(R.id.layoutRing2).setVisibility(View.INVISIBLE);
+                findViewById(R.id.scrolling2).setVisibility(View.INVISIBLE);
                 Change_Color_on_Resistor(index, tv_color2);
                 break;
             case(2):
                 in_Ring3.setImageResource(getResources().getIdentifier(colorlist.get(index) , "drawable", getPackageName()));
                 findViewById(R.id.layoutRing3).setVisibility(View.INVISIBLE);
+                findViewById(R.id.scrolling3).setVisibility(View.INVISIBLE);
                 Change_Color_on_Resistor(index, tv_color3);
                 break;
             case(3):
                 in_Ring4.setImageResource(getResources().getIdentifier(colorlist.get(index) , "drawable", getPackageName()));
                 findViewById(R.id.layoutRing4).setVisibility(View.INVISIBLE);
+                findViewById(R.id.scrolling4).setVisibility(View.INVISIBLE);
                 Change_Color_on_Resistor(index, tv_color4);
                 break;
             case(4):
                 in_Ring5.setImageResource(getResources().getIdentifier(colorlist.get(index) , "drawable", getPackageName()));
                 findViewById(R.id.layoutRing5).setVisibility(View.INVISIBLE);
+                findViewById(R.id.scrolling5).setVisibility(View.INVISIBLE);
                 Change_Color_on_Resistor(index, tv_color5);
                 break;
         }
@@ -240,62 +246,48 @@ public class MainActivity extends AppCompatActivity {
         String id = view.getTag().toString();
         int index = Integer.parseInt(id);
         All_Elements_Invisible();
-        //die Layouts sind durchnummeriert von 1-5, der switch-case prüft im welchen Layout die Farbe ausgewählt wurde
-        //um die richtige Farbe zu wechseln
+        View colorLayout = Get_ColorSelection_Layout(index);
+        View scroll = Get_ScrollView(index);
+        if(this.visible){
+            colorLayout.setVisibility(View.INVISIBLE);
+            scroll.setVisibility(View.INVISIBLE);
+            All_Elements_Visible();
+        }
+        else{
+            colorLayout.setVisibility(View.VISIBLE);
+            scroll.setVisibility(View.VISIBLE);
+            this.visible = true;
+        }
+    }
+    private View Get_ColorSelection_Layout(int index){
         switch(index){
             case 1:
-                if(this.visible){
-                    findViewById(R.id.layoutRing1).setVisibility(View.INVISIBLE);
-                    All_Elements_Visible();
-                    this.visible = false; //kann man weglassen
-                }
-                else{
-                    findViewById(R.id.layoutRing1).setVisibility(View.VISIBLE);
-                    this.visible = true;
-                }
-                break;
+                return findViewById(R.id.layoutRing1);
             case 2:
-                if(this.visible){
-                    findViewById(R.id.layoutRing2).setVisibility(View.INVISIBLE);
-                    All_Elements_Visible();
-                    this.visible = false;
-                }
-                else{
-                    findViewById(R.id.layoutRing2).setVisibility(View.VISIBLE);
-                    this.visible = true;
-                }
-                break;
+                return findViewById(R.id.layoutRing2);
             case 3:
-                if(this.visible){
-                    findViewById(R.id.layoutRing3).setVisibility(View.INVISIBLE);
-                    All_Elements_Visible();
-                    this.visible = false;
-                }
-                else{
-                    findViewById(R.id.layoutRing3).setVisibility(View.VISIBLE);
-                    this.visible = true;
-                }                break;
+                return findViewById(R.id.layoutRing3);
             case 4:
-                if(this.visible){
-                    findViewById(R.id.layoutRing4).setVisibility(View.INVISIBLE);
-                    All_Elements_Visible();
-                    this.visible = false;
-                }
-                else{
-                    findViewById(R.id.layoutRing4).setVisibility(View.VISIBLE);
-                    this.visible = true;
-                }                break;
+                return findViewById(R.id.layoutRing4);
             case 5:
-                if(this.visible){
-                    findViewById(R.id.layoutRing5).setVisibility(View.INVISIBLE);
-                    All_Elements_Visible();
-                    this.visible = false;
-                }
-                else{
-                    findViewById(R.id.layoutRing5).setVisibility(View.VISIBLE);
-                    this.visible = true;
-                }                break;
+                return findViewById(R.id.layoutRing5);
         }
+        return null;
+    }
+    private View Get_ScrollView(int index){
+        switch(index){
+            case 1:
+                return findViewById(R.id.scrolling1);
+            case 2:
+                return findViewById(R.id.scrolling2);
+            case 3:
+                return findViewById(R.id.scrolling3);
+            case 4:
+                return findViewById(R.id.scrolling4);
+            case 5:
+                return findViewById(R.id.scrolling5);
+        }
+        return null;
     }
     private void All_Elements_Invisible(){
         findViewById(R.id.btn_Submit).setVisibility(View.INVISIBLE);
