@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     TextView tv_Resistor;
     TextView tv_Tolerance;
     TextView tv_issues;
-    boolean visible = false;
+    boolean b_Visible = false;
     private String[] colortable = {"black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white", "gold", "silver"};
     private String[] colors;
     private List<String> colorlist = new ArrayList<String>();
@@ -245,7 +245,7 @@ public class MainActivity extends AppCompatActivity {
         All_Elements_Invisible();
         View colorLayout = Get_ColorSelection_Layout(index);
         View scroll = Get_ScrollView(index);
-        if(this.visible){
+        if(this.b_Visible){
             colorLayout.setVisibility(View.INVISIBLE);
             scroll.setVisibility(View.INVISIBLE);
             All_Elements_Visible();
@@ -253,7 +253,7 @@ public class MainActivity extends AppCompatActivity {
         else{
             colorLayout.setVisibility(View.VISIBLE);
             scroll.setVisibility(View.VISIBLE);
-            this.visible = true;
+            this.b_Visible = true;
         }
     }
     private View Get_ColorSelection_Layout(int index){
@@ -308,7 +308,7 @@ public class MainActivity extends AppCompatActivity {
         tv_Tolerance.setVisibility(View.VISIBLE);
         findViewById(R.id.btn_Reset).setVisibility(View.VISIBLE);
         findViewById(R.id.tv_Copyright).setVisibility(View.VISIBLE);
-        this.visible = false;
+        this.b_Visible = false;
     }
     public void Reset_Strings_and_Colors(View view) {
         colorlist = new ArrayList<String>();
