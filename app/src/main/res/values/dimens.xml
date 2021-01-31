@@ -14,5 +14,5 @@
     <dimen name="color_first_size">18sp</dimen>
     <dimen name="color_last_size">16sp</dimen>
     <dimen name="color_middle_size">15sp</dimen>
-    <dimen name="color_height">67sp</dimen>
+    <dimen name="color_height">64sp</dimen>
 </resources>
