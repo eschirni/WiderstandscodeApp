@@ -297,22 +297,6 @@
                 android:tag="white0"
                 app:srcCompat="@drawable/white" />
 
-            <ImageView
-                android:id="@+id/gold0"
-                android:layout_width="@dimen/color_buttons_size"
-                android:layout_height="@dimen/color_buttons_size"
-                android:onClick="SelectColor"
-                android:tag="gold0"
-                app:srcCompat="@drawable/gold" />
-
-            <ImageView
-                android:id="@+id/silver0"
-                android:layout_width="@dimen/color_buttons_size"
-                android:layout_height="@dimen/color_buttons_size"
-                android:onClick="SelectColor"
-                android:tag="silver0"
-                app:srcCompat="@drawable/silver" />
-
         </LinearLayout>
     </ScrollView>
 
@@ -415,22 +399,6 @@
                 android:tag="white1"
                 app:srcCompat="@drawable/white" />
 
-            <ImageView
-                android:id="@+id/gold1"
-                android:layout_width="@dimen/color_buttons_size"
-                android:layout_height="@dimen/color_buttons_size"
-                android:onClick="SelectColor"
-                android:tag="gold1"
-                app:srcCompat="@drawable/gold" />
-
-            <ImageView
-                android:id="@+id/silver1"
-                android:layout_width="@dimen/color_buttons_size"
-                android:layout_height="@dimen/color_buttons_size"
-                android:onClick="SelectColor"
-                android:tag="silver1"
-                app:srcCompat="@drawable/silver" />
-
         </LinearLayout>
     </ScrollView>
 
@@ -530,22 +498,6 @@
                 android:onClick="SelectColor"
                 android:tag="white2"
                 app:srcCompat="@drawable/white" />
-
-            <ImageView
-                android:id="@+id/gold2"
-                android:layout_width="@dimen/color_buttons_size"
-                android:layout_height="@dimen/color_buttons_size"
-                android:onClick="SelectColor"
-                android:tag="gold2"
-                app:srcCompat="@drawable/gold" />
-
-            <ImageView
-                android:id="@+id/silver2"
-                android:layout_width="@dimen/color_buttons_size"
-                android:layout_height="@dimen/color_buttons_size"
-                android:onClick="SelectColor"
-                android:tag="silver2"
-                app:srcCompat="@drawable/silver" />
 
         </LinearLayout>
     </ScrollView>
