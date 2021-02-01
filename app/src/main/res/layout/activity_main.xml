@@ -24,7 +24,7 @@
         android:layout_width="@dimen/btn_width"
         android:layout_height="@dimen/btn_height"
         android:letterSpacing="0"
-        android:onClick="Reset_Strings_and_Colors"
+        android:onClick="ResetStringsAndColors"
         android:text="@string/btn_Reset"
         android:textAllCaps="false"
         android:textSize="@dimen/hint_txt_size"
@@ -67,7 +67,7 @@
         android:layout_height="@dimen/btn_small_height"
         android:letterSpacing="0"
         android:maxWidth="120dp"
-        android:onClick="Copy_to_Clipboard"
+        android:onClick="CopyToClipboard"
         android:tag="tol"
         android:text="@string/btn_Copy"
         android:textAllCaps="false"
@@ -110,7 +110,7 @@
         android:layout_height="@dimen/btn_small_height"
         android:letterSpacing="0"
         android:maxWidth="120dp"
-        android:onClick="Copy_to_Clipboard"
+        android:onClick="CopyToClipboard"
         android:tag="res"
         android:text="@string/btn_Copy"
         android:textAllCaps="false"
@@ -129,7 +129,7 @@
         android:layout_width="@dimen/btn_width"
         android:layout_height="@dimen/btn_height"
         android:letterSpacing="0"
-        android:onClick="Run_Calculation"
+        android:onClick="RunCalculation"
         android:text="@string/btn_SubmitName"
         android:textAllCaps="false"
         android:textSize="@dimen/hint_txt_size"
@@ -157,7 +157,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="Show_Color_Selection"
+            android:onClick="ShowColorSelection"
             android:tag="1"
             app:srcCompat="@drawable/gruppe_4" />
 
@@ -166,7 +166,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="Show_Color_Selection"
+            android:onClick="ShowColorSelection"
             android:tag="2"
             app:srcCompat="@drawable/gruppe_4" />
 
@@ -175,7 +175,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="Show_Color_Selection"
+            android:onClick="ShowColorSelection"
             android:tag="3"
             app:srcCompat="@drawable/gruppe_4" />
 
@@ -184,7 +184,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="Show_Color_Selection"
+            android:onClick="ShowColorSelection"
             android:tag="4"
             app:srcCompat="@drawable/gruppe_4" />
 
@@ -193,7 +193,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="Show_Color_Selection"
+            android:onClick="ShowColorSelection"
             android:tag="5"
             app:srcCompat="@drawable/gruppe_4" />
     </LinearLayout>

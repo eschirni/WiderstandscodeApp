@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        SetLocale();
+        SetLocale();    //Überprüft die Sprache des Android-Systems
         setContentView(R.layout.activity_main);
         in_Ring1 = findViewById(R.id.iv_Ring1);
         in_Ring2 = findViewById(R.id.iv_Ring2);
@@ -60,26 +60,26 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < 5; i++) {
             b_selected[i] = false;
         }
-        Generate_Tolerance_Table();
+        GenerateToleranceTable(); //Erstellt ein "Hash Map" (Dictionary) mit Key, Value für die Toleranz
     }
-    public void Run_Calculation(View view){
+    public void RunCalculation(View view){
         if(Valid() == true)
         {
             tv_issues.setText("");
             colors = colorlist.toArray(new String[colorlist.size()]);
-            Resistor_Values_and_Multiplicator();
+            ResistorValuesMultiplicator();  //Rechnet Multiplikator, die Werte aus und gibt das Ergebnis aus
             if(colors.length > 3) {
-                double tolerance = Get_Tolerance(colors, 4);
+                double tolerance = GetTolerance(colors, 4); //Ruft Toleranz von der Farbe aus der Liste ab
                 String strTolerance = Double.toString(tolerance);
                 strTolerance += " %";
                 tv_Tolerance.setText(strTolerance);
             }
         }
         else {
-            Issue();
+            Issue();    //Gibt aus, dass nicht alle wichtigen Werte ausgewählt wurden
         }
     }
-    private void Resistor_Values_and_Multiplicator(){
+    private void ResistorValuesMultiplicator(){
         String values = "";
         String multiplikator = "1";
         long longValue = 0;
@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
         values += " Ω";
         tv_Resistor.setText(values);
     }
-    private void Generate_Tolerance_Table(){
+    private void GenerateToleranceTable(){
         for (int i = 0; i < colortable.length; i++)
         {
             generalTolerance.put(colortable[i], 0.0);
@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
         generalTolerance.put("gold", 5.0);
         generalTolerance.put("silver", 10.0);
     }
-    private double Get_Tolerance(String[] colors, int pos){
+    private double GetTolerance(String[] colors, int pos){
         return generalTolerance.get(colors[pos]);
     }
     public void SelectColor(View view){
@@ -168,38 +168,38 @@ public class MainActivity extends AppCompatActivity {
                 in_Ring1.setImageResource(getResources().getIdentifier(colorlist.get(index) , "drawable", getPackageName()));
                 findViewById(R.id.lyt_Colors1).setVisibility(View.INVISIBLE); //Layout wird wieder unsichtbar
                 findViewById(R.id.sv_Color1).setVisibility(View.INVISIBLE);
-                Change_Color_on_Resistor(index, tv_color); //Wählt die Farbe je nach der Liste aus
+                ChangeColorResistor(index, tv_color); //Ändert die Farbe auf dem Resistor
                 break;
             case(1):
                 in_Ring2.setImageResource(getResources().getIdentifier(colorlist.get(index) , "drawable", getPackageName()));
                 findViewById(R.id.lyt_Colors2).setVisibility(View.INVISIBLE);
                 findViewById(R.id.sv_Color2).setVisibility(View.INVISIBLE);
-                Change_Color_on_Resistor(index, tv_color2);
+                ChangeColorResistor(index, tv_color2);
                 break;
             case(2):
                 in_Ring3.setImageResource(getResources().getIdentifier(colorlist.get(index) , "drawable", getPackageName()));
                 findViewById(R.id.lyt_Colors3).setVisibility(View.INVISIBLE);
                 findViewById(R.id.sv_Color3).setVisibility(View.INVISIBLE);
-                Change_Color_on_Resistor(index, tv_color3);
+                ChangeColorResistor(index, tv_color3);
                 break;
             case(3):
                 in_Ring4.setImageResource(getResources().getIdentifier(colorlist.get(index) , "drawable", getPackageName()));
                 findViewById(R.id.lyt_Colors4).setVisibility(View.INVISIBLE);
                 findViewById(R.id.sv_Color4).setVisibility(View.INVISIBLE);
-                Change_Color_on_Resistor(index, tv_color4);
+                ChangeColorResistor(index, tv_color4);
                 break;
             case(4):
                 in_Ring5.setImageResource(getResources().getIdentifier(colorlist.get(index) , "drawable", getPackageName()));
                 findViewById(R.id.lyt_Colors5).setVisibility(View.INVISIBLE);
                 findViewById(R.id.sv_Color5).setVisibility(View.INVISIBLE);
-                Change_Color_on_Resistor(index, tv_color5);
+                ChangeColorResistor(index, tv_color5);
                 break;
         }
-        All_Elements_Visible();
+        AllElementsVisible();
     }
-    private void Change_Color_on_Resistor(int index, TextView tv)
+    private void ChangeColorResistor(int index, TextView tv)
     {
-        switch (colorlist.get(index))
+        switch (colorlist.get(index))   //Überprüft die Farbe am übergebenen Index und passt sie am Resistor an
         {
             case "black":
                 tv.setBackgroundColor(Color.rgb(0, 0, 0));
@@ -239,24 +239,24 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
     }
-    public void Show_Color_Selection(View view) {
+    public void ShowColorSelection(View view) {
         String id = view.getTag().toString();
         int index = Integer.parseInt(id);
-        All_Elements_Invisible();
-        View colorLayout = Get_ColorSelection_Layout(index);
-        View scroll = Get_ScrollView(index);
-        if(this.b_Visible){
+        AllElementsInvisible();
+        View colorLayout = GetColorSelectionLayout(index);
+        View scroll = GetScrollView(index);
+        if(this.b_Visible){ //Versteckt die Farben wenn man auf den Knopf drückt
             colorLayout.setVisibility(View.INVISIBLE);
             scroll.setVisibility(View.INVISIBLE);
-            All_Elements_Visible();
+            AllElementsVisible();
         }
-        else{
+        else{   //Zeigt die Farben wenn man auf den Knopf drückt
             colorLayout.setVisibility(View.VISIBLE);
             scroll.setVisibility(View.VISIBLE);
             this.b_Visible = true;
         }
     }
-    private View Get_ColorSelection_Layout(int index){
+    private View GetColorSelectionLayout(int index){
         switch(index){
             case 1:
                 return findViewById(R.id.lyt_Colors1);
@@ -271,7 +271,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return null;
     }
-    private View Get_ScrollView(int index){
+    private View GetScrollView(int index){
         switch(index){
             case 1:
                 return findViewById(R.id.sv_Color1);
@@ -286,7 +286,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return null;
     }
-    private void All_Elements_Invisible(){
+    private void AllElementsInvisible(){
         findViewById(R.id.btn_Submit).setVisibility(View.INVISIBLE);
         findViewById(R.id.btn_Cpy1).setVisibility(View.INVISIBLE);
         findViewById(R.id.btn_Cpy2).setVisibility(View.INVISIBLE);
@@ -300,7 +300,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.lyt_Colors5).setVisibility(View.INVISIBLE);
         findViewById(R.id.tv_Copyright).setVisibility(View.INVISIBLE);
     }
-    private void All_Elements_Visible(){
+    private void AllElementsVisible(){
         findViewById(R.id.btn_Submit).setVisibility(View.VISIBLE);
         findViewById(R.id.btn_Cpy1).setVisibility(View.VISIBLE);
         findViewById(R.id.btn_Cpy2).setVisibility(View.VISIBLE);
@@ -310,7 +310,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.tv_Copyright).setVisibility(View.VISIBLE);
         this.b_Visible = false;
     }
-    public void Reset_Strings_and_Colors(View view) {
+    public void ResetStringsAndColors(View view) {  //Setzt alle wichtigen Variablen und visuellen Elemente zurück
         colorlist = new ArrayList<String>();
         tv_Resistor.setText(R.string.resistorDefault);
         tv_Tolerance.setText(R.string.toleranceDefault);
@@ -333,13 +333,13 @@ public class MainActivity extends AppCompatActivity {
         Locale.setDefault(sysLocale);
     }
     private boolean Valid() {
-        if(b_selected[4] == true && b_selected[3] == true && (b_selected[0] == true || b_selected[1] == true || b_selected[2] == true)) //Überprüft ob Toleranz, Multiplier und midestens eine Farbe ausgewählt ist
+        if(b_selected[4] == true && b_selected[3] == true && (b_selected[0] == true || b_selected[1] == true || b_selected[2] == true)) //Überprüft ob Toleranz, Multiplier und midestens eine Farbe ausgewählt sind
             return true;
         else
             return false;
     }
 
-    public void Copy_to_Clipboard(View view) {
+    public void CopyToClipboard(View view) {
         ClipboardManager clipboard = (ClipboardManager)getSystemService(Context.CLIPBOARD_SERVICE);
         ClipData data = ClipData.newPlainText("Zero", "Zero");
         switch (view.getTag().toString()){
