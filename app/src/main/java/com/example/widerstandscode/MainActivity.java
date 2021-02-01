@@ -82,21 +82,21 @@ public class MainActivity extends AppCompatActivity {
     private void ResistorValuesMultiplicator(){
         String values = "";
         String multiplikator = "1";
-        long longValue = 0;
-        double doubleValue = 0.0;
-        for(int i = 0; i < colors.length; i++)
+        long l_Value = 0;
+        double d_Value = 0.0; //falls Multiplikator gold oder silverf
+        for(int i = 0; i < colors.length; i++) //das ganze Array wird durchgegangen und mit colortable verglichen
         {
             for(int x = 0; x < this.colortable.length; x++)
             {
                 if(colors[i].equals(colortable[x])) {
                     if(i<=2){
-                        values += Integer.toString(x);
-                        x = this.colortable.length;
+                        values += Integer.toString(x); //wenn übereinstimmung wird die Position an values angefügt
+                        x = this.colortable.length; //Abbruchbedingung
                     }
-                    if(i == 3){
+                    if(i == 3){ //wenn Multiplikator/Toleranz
                         if(colors[i].equals("white") || colors[i].equals("grey")){
                             multiplikator = "1";
-                        }
+                        } //Sonderfälle gold und silver
                         else if(colors[i].equals("gold")){
                             multiplikator = "0.1";
                         }
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
                             multiplikator = "0.01";
                         }
                         else {
-                            for (int y = 0; y < x; y++)
+                            for (int y = 0; y < x; y++) //Die Anzahl der 0 entspricht der Position in colortable
                                 multiplikator += "0";
                         }
                     }
@@ -112,15 +112,15 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         double doubleMulti = Double.parseDouble(multiplikator);
-        if(doubleMulti < 1){
-            doubleValue = doubleMulti * Double.parseDouble(values);
-            BigDecimal bd = new BigDecimal(doubleValue).setScale(2, RoundingMode.HALF_EVEN);
-            doubleValue = bd.doubleValue();
-            values = Double.toString(doubleValue);
+        if(doubleMulti < 1){ //ob Multiplikator gold o. silver -> wenn ja brauchen wir den Datentyp Double
+            d_Value = doubleMulti * Double.parseDouble(values);
+            BigDecimal bd = new BigDecimal(d_Value).setScale(2, RoundingMode.HALF_EVEN);
+            d_Value = bd.doubleValue();
+            values = Double.toString(d_Value);
         }
-        else{
-            longValue = Long.parseLong(multiplikator) * Long.parseLong(values);
-            values = Long.toString(longValue);
+        else{ //wenn nicht nehmen wir long, weil es in der Ausgabe schöner ausschaut und bei mir das Runden irgenwie nicht geklappt hat
+            l_Value = Long.parseLong(multiplikator) * Long.parseLong(values);
+            values = Long.toString(l_Value);
         }
         values += " Ω";
         tv_Resistor.setText(values);
@@ -143,23 +143,23 @@ public class MainActivity extends AppCompatActivity {
         return generalTolerance.get(colors[pos]);
     }
     public void SelectColor(View view){
-        String id = view.getTag().toString();
-        int index = Integer.parseInt(Character.toString(id.charAt(id.length() - 1)));
-        id = id.substring(0, id.length() - 1);
-        int pos = (index - colorlist.size())+1;
+        String id = view.getTag().toString(); //die ID hat das Format: farbe0
+        int index = Integer.parseInt(Character.toString(id.charAt(id.length() - 1))); //das letzte Zeichen ist eine Nummer welche das Band angibt
+        id = id.substring(0, id.length() - 1); //die nummer wird entfernt
+        int pos = (index - colorlist.size())+1; //an welcher Position die Farbe gesetzt wird
         if(pos > 1){
-            for(int i = colorlist.size()-1;i<index-1;i++){
+            for(int i = colorlist.size()-1;i<index-1;i++){ // wenn groesser 1 sind die dazwischen liegenden Farben nicht ausgewählt, sie werden im Array mit "null" befüllt
                 colorlist.add("null");
             }
             colorlist.add(index, id);
         }
         else if(pos == 1 || colorlist.size() == 0){
-            colorlist.add(index, id);
+            colorlist.add(index, id); //wenn an dieser Position keine Farbe ausgewählt wurde
         }
         else{
-            colorlist.set(index, id);
+            colorlist.set(index, id); //wenn an dieser Position eine Farbe ausgewählt wurde, dann wird sie ersetzt.
         }
-        ChangeColor(index);
+        ChangeColor(index); //die Farben in der Anzeige werden geändert
         b_selected[index] = true;
     }
     private void ChangeColor(int index){
@@ -242,8 +242,8 @@ public class MainActivity extends AppCompatActivity {
     public void ShowColorSelection(View view) {
         String id = view.getTag().toString();
         int index = Integer.parseInt(id);
-        AllElementsInvisible();
-        View colorLayout = GetColorSelectionLayout(index);
+        AllElementsInvisible(); //die Ergebnisausgabe, Buttons, usw. werden unsichtbar
+        View colorLayout = GetColorSelectionLayout(index); //Layout und ScrollView werden anhand von der ID ermittelt.
         View scroll = GetScrollView(index);
         if(this.b_Visible){ //Versteckt die Farben wenn man auf den Knopf drückt
             colorLayout.setVisibility(View.INVISIBLE);
