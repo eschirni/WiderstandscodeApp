@@ -299,6 +299,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.lyt_Colors4).setVisibility(View.INVISIBLE);
         findViewById(R.id.lyt_Colors5).setVisibility(View.INVISIBLE);
         findViewById(R.id.tv_Copyright).setVisibility(View.INVISIBLE);
+        findViewById(R.id.tv_issue).setVisibility(View.INVISIBLE);
     }
     private void AllElementsVisible(){
         findViewById(R.id.btn_Submit).setVisibility(View.VISIBLE);
@@ -308,6 +309,7 @@ public class MainActivity extends AppCompatActivity {
         tv_Tolerance.setVisibility(View.VISIBLE);
         findViewById(R.id.btn_Reset).setVisibility(View.VISIBLE);
         findViewById(R.id.tv_Copyright).setVisibility(View.VISIBLE);
+        findViewById(R.id.tv_issue).setVisibility(View.VISIBLE);
         this.b_Visible = false;
     }
     public void ResetStringsAndColors(View view) {  //Setzt alle wichtigen Variablen und visuellen Elemente zurück
