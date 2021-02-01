@@ -585,22 +585,6 @@
                 app:srcCompat="@drawable/violet" />
 
             <ImageView
-                android:id="@+id/grey3"
-                android:layout_width="@dimen/color_buttons_size"
-                android:layout_height="@dimen/color_buttons_size"
-                android:onClick="SelectColor"
-                android:tag="grey3"
-                app:srcCompat="@drawable/grey" />
-
-            <ImageView
-                android:id="@+id/white3"
-                android:layout_width="@dimen/color_buttons_size"
-                android:layout_height="@dimen/color_buttons_size"
-                android:onClick="SelectColor"
-                android:tag="white3"
-                app:srcCompat="@drawable/white" />
-
-            <ImageView
                 android:id="@+id/gold3"
                 android:layout_width="@dimen/color_buttons_size"
                 android:layout_height="@dimen/color_buttons_size"
@@ -707,14 +691,6 @@
                 android:onClick="SelectColor"
                 android:tag="grey4"
                 app:srcCompat="@drawable/grey" />
-
-            <ImageView
-                android:id="@+id/white4"
-                android:layout_width="@dimen/color_buttons_size"
-                android:layout_height="@dimen/color_buttons_size"
-                android:onClick="SelectColor"
-                android:tag="white4"
-                app:srcCompat="@drawable/white" />
 
             <ImageView
                 android:id="@+id/gold4"
